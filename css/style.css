@@ -562,6 +562,10 @@ a.ledger-item:hover {
   gap: 1.5rem;
 }
 
+.form-honeypot {
+  display: none;
+}
+
 .form-field {
   display: flex;
   flex-direction: column;

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sendBtn.classList.toggle('is-visible', messageField.value.trim().length > 0);
   });
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const name = form.name.value.trim();
@@ -20,17 +20,35 @@ document.addEventListener('DOMContentLoaded', () => {
     sendBtn.disabled = true;
     sendBtn.textContent = 'Sending…';
 
-    const subject = encodeURIComponent(`Message from ${name} (victorabuchi.com)`);
-    const body = encodeURIComponent(`${message}\n\nFrom: ${name} (${email})`);
-    const mailtoUrl = `mailto:contact@victorabuchi.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: form.access_key.value,
+          botcheck: form.botcheck.checked,
+          subject: `New message from ${name} (victorabuchi.com)`,
+          name,
+          email,
+          message,
+        }),
+      });
+      const result = await response.json();
 
+      if (result.success) {
+        sendBtn.textContent = 'Sent';
+        form.reset();
+        sendBtn.classList.remove('is-visible');
+      } else {
+        sendBtn.textContent = 'Try again';
+      }
+    } catch (err) {
+      sendBtn.textContent = 'Try again';
+    }
+
+    sendBtn.disabled = false;
     window.setTimeout(() => {
-      window.location.href = mailtoUrl;
-      sendBtn.textContent = 'Opening email…';
-      window.setTimeout(() => {
-        sendBtn.disabled = false;
-        sendBtn.textContent = 'Send';
-      }, 2000);
-    }, 500);
+      sendBtn.textContent = 'Send';
+    }, 2500);
   });
 });
