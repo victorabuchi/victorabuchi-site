@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Victor Abuchi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav">
+      <a href="index.html" class="site-nav-name">Victor Abuchi</a>
+      <ul class="site-nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contact">
+      <div class="contact-inner">
+        <span class="section-label">Contact</span>
+        <div class="contact-content">
+          <p class="contact-lede">For brand partnerships, freelance projects, or just to talk shop.</p>
+          <a href="mailto:contact@victorabuchi.com" class="contact-primary">contact@victorabuchi.com</a>
+          <a href="tel:+358469395024" class="contact-secondary">+358 46 939 5024</a>
+        </div>
+
+        <div class="contact-form-wrap">
+          <span class="section-label">Or send a quick message</span>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-field">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <div class="form-field-label-row">
+                <label for="contact-message">Message</label>
+                <button type="submit" class="form-send" id="form-send">Send</button>
+              </div>
+              <textarea id="contact-message" name="message" rows="5" required></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Footer -->
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
