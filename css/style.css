@@ -265,6 +265,28 @@ body {
 }
 
 /* -------------------------------------------------------- */
+/* Process                                                      */
+/* -------------------------------------------------------- */
+
+#process {
+  padding: 5rem 8vw;
+  border-top: 1px solid var(--color-rule);
+}
+
+.process-inner {
+  max-width: 64rem;
+}
+
+/* -------------------------------------------------------- */
+/* Resume                                                       */
+/* -------------------------------------------------------- */
+
+#resume {
+  padding: 5rem 8vw;
+  border-top: 1px solid var(--color-rule);
+}
+
+/* -------------------------------------------------------- */
 /* Skills                                                       */
 /* -------------------------------------------------------- */
 
@@ -332,7 +354,8 @@ body {
 .projects-inner > .section-label,
 .services-inner > .section-label,
 .skills-inner > .section-label,
-.contact-inner > .section-label {
+.contact-inner > .section-label,
+.process-inner > .section-label {
   display: block;
   margin-bottom: 2.5rem;
 }
@@ -419,7 +442,9 @@ a.ledger-item:hover {
 
 @media (max-width: 40rem) {
   #projects,
-  #services {
+  #services,
+  #process,
+  #resume {
     padding: 4rem 6vw;
   }
 
