@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="8" fill="#000"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="26" letter-spacing="-1" fill="#fff">VA</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    path { fill: #000; }
+    @media (prefers-color-scheme: dark) {
+      path { fill: #fff; }
+    }
+  </style>
+  <path fill-rule="evenodd" d="M16 3 L23 13 L16 29 L9 13 Z M15.5 9 L16.5 9 L16.5 24 L15.5 24 Z"/>
 </svg>
