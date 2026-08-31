@@ -73,6 +73,10 @@ body {
 
 header {
   flex: 0 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-bg);
 }
 
 main {
@@ -773,7 +777,6 @@ footer {
 }
 
 .case-study-header {
-  max-width: 44rem;
   margin: 0 auto 4rem;
   padding-bottom: 3rem;
   text-align: center;
