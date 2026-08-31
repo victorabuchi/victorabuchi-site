@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rannikon: Farm Workforce Management System | Victor Abuchi</title>
+  <meta name="description" content="How Victor Abuchi built a full-stack timesheet SaaS for 300+ farm workers in Finland, with a web app, mobile app, 5 languages, and 6 user roles.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav">
+      <a href="/" class="site-nav-name">Victor Abuchi</a>
+      <ul class="site-nav-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/case-studies/" aria-current="page">Case Studies</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/process/">Process</a></li>
+        <li><a href="/skills/">Skills</a></li>
+        <li><a href="/resume/">Resume</a></li>
+        <li><a href="/testimonials/">Testimonials</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="case-study">
+      <a href="/projects/" class="case-study-back">&larr; Back to Projects</a>
+
+      <div class="case-study-header">
+        <h1 class="case-study-title">Rannikon: Building a Full-Stack Farm Timesheet System from Scratch</h1>
+        <p class="case-study-subtitle">How I designed, built, and deployed a complete workforce management platform for Rannikon Puutarha berry farm in Finland, serving 300+ seasonal workers across 6 house groups in 5 languages.</p>
+      </div>
+
+      <div class="case-study-body">
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">01 &middot; The Overview</h2>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/hero.png" alt="Rannikon Puutarha landing page hero">
+            <figcaption class="case-study-caption">Rannikon Puutarha landing page</figcaption>
+          </figure>
+
+          <p>Rannikon Puutarha is one of Finland's largest berry farms, located in Halikko, Southwest Finland. Every season they employ over 300 seasonal workers from Ukraine, Cambodia, Vietnam, Nepal, and beyond, each required to track their daily working hours across four official payroll paper forms: the white paper, orange paper, weekly summary, and green paper.</p>
+
+          <p>Before Rannikon existed, every worker filled these forms by hand. Every calculation was done manually. Supervisors recorded arrival times in notebooks. Payroll staff spent days verifying hundreds of paper submissions at the end of each month. Mistakes were common. Disputes over hours happened regularly.</p>
+
+          <p>I built Rannikon to solve all of this.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">02 &middot; The Challenge</h2>
+
+          <p>The farm had no digital system for tracking worker hours. The existing process:</p>
+
+          <ul>
+            <li>Workers arrived at the farm and supervisors wrote down their work numbers and start times in notebooks</li>
+            <li>Workers manually calculated their own hours across 4 different paper forms</li>
+            <li>Calculation errors were frequent: the formula for white paper, orange paper, and weekly summary is complex</li>
+            <li>Supervisors sent handwritten daily logs to housemasters via Facebook groups</li>
+            <li>Housemasters manually sorted logs by house group and forwarded to payroll</li>
+            <li>Payroll staff received hundreds of paper submissions monthly with no way to verify them against original supervisor records</li>
+          </ul>
+
+          <p>The farm manager, Lina Rannikko, had no digital visibility into daily operations. The payroll team, led by Aleksi and Johanna, had no automated verification system.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">03 &middot; The Solution</h2>
+
+          <p>I approached Lina Rannikko directly and proposed building a complete digital workforce management system. She approved the project, and I built the entire system solo over several months.</p>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/dashboard.png" alt="Rannikon worker dashboard overview">
+            <figcaption class="case-study-caption">Dashboard overview</figcaption>
+          </figure>
+
+          <p>Rannikon is a full-stack SaaS application with:</p>
+
+          <ul>
+            <li>A web app at <code>rannikon.com</code></li>
+            <li>A native Android mobile app on Google Play Store</li>
+            <li>A Fastify REST API at <code>api.rannikon.com</code></li>
+            <li>A PostgreSQL database hosted on Supabase EU</li>
+            <li>Deployed on Render with auto-deploy from GitHub</li>
+          </ul>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">04 &middot; The Calculation Engine</h2>
+
+          <p>The core of the system is the automatic hour calculation engine. Workers enter three values: actual start time, actual finish time, and total break duration. The engine automatically calculates:</p>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/dashboarddaysview.png" alt="Days view with hour badges">
+            <figcaption class="case-study-caption">Days view with hour badges</figcaption>
+          </figure>
+
+          <h3 class="case-study-subhead">White paper: work paid by the hour</h3>
+          <ul>
+            <li>White start = actual start time</li>
+            <li>White finish = actual start + 8 hours + eating break (30 min if break is 30 min or more)</li>
+            <li>White hours = always 8:00 (or less if worker finished early)</li>
+            <li>Extra breaks = total break minus 30 minutes eating break</li>
+          </ul>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/whitepaper.png" alt="White paper timesheet view">
+            <figcaption class="case-study-caption">White paper</figcaption>
+          </figure>
+
+          <h3 class="case-study-subhead">Orange paper: extra work paid by the hour</h3>
+          <ul>
+            <li>Orange start = white finish</li>
+            <li>Orange finish = actual finish</li>
+            <li>Orange break = same as extra break on white paper</li>
+            <li>Orange hours = orange finish minus orange start minus orange break</li>
+          </ul>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/orangepaper.png" alt="Orange paper timesheet view">
+            <figcaption class="case-study-caption">Orange paper</figcaption>
+          </figure>
+
+          <h3 class="case-study-subhead">Weekly summary: auto-generated from all entries</h3>
+          <ul>
+            <li>Working hours row (max 8 per day)</li>
+            <li>Extra hours row (max 3 per day Monday to Friday, max 11 Saturday)</li>
+            <li>Berry picking kg row</li>
+            <li>Total hours per day and per week</li>
+          </ul>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/weeklysummary.png" alt="Weekly summary view">
+            <figcaption class="case-study-caption">Weekly summary, auto-generated from daily entries</figcaption>
+          </figure>
+
+          <h3 class="case-study-subhead">Green paper: berry picking, salary paid by kg</h3>
+          <ul>
+            <li>Separate from field work entries</li>
+            <li>Workers enter start time, finish time, kg picked, and what was picked</li>
+            <li>No calculation: displays exactly what the worker entered</li>
+            <li>Eating break column always shows 1 hour</li>
+          </ul>
+
+          <p>This calculation engine runs entirely on the backend (Fastify), ensuring all workers see the same accurate result regardless of device or browser.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">05 &middot; The Role System</h2>
+
+          <p>Rannikon has 6 user roles, each with a dedicated page and specific permissions:</p>
+
+          <h3 class="case-study-subhead">Worker</h3>
+          <ul>
+            <li>Logs daily hours</li>
+            <li>Views and downloads all 4 papers as PDF or Excel</li>
+            <li>Edits any cell directly on the papers</li>
+            <li>Submits monthly papers to payroll</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Supervisor</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/supervisors.png" alt="Supervisor batch recording page">
+            <figcaption class="case-study-caption">Supervisor batch recording page</figcaption>
+          </figure>
+          <ul>
+            <li>Records worker batches at the farm (multiple workers, one start time)</li>
+            <li>Records breaks throughout the day (system accumulates total)</li>
+            <li>Sets finish time per batch: auto-fills all workers' timesheets</li>
+            <li>Sends daily worklog to admin via email</li>
+            <li>Exports PDF and Excel of the day's worklog</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Housemaster</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/housemaster.png" alt="Housemaster daily worklog page">
+            <figcaption class="case-study-caption">Housemaster daily worklog page</figcaption>
+          </figure>
+          <ul>
+            <li>Receives daily worklogs from admin sorted by their house group</li>
+            <li>Downloads as PDF, Excel, or image</li>
+            <li>Shares to Facebook group or WhatsApp</li>
+            <li>
+              Workers are automatically sorted by work number into 6 house groups:
+              <ul>
+                <li><code>100&ndash;199</code>: Kivilinna / Salo</li>
+                <li><code>200&ndash;299</code>: Karton Cambodia</li>
+                <li><code>300&ndash;399</code>: Karton International</li>
+                <li><code>400&ndash;499</code>: Vassila</li>
+                <li><code>500&ndash;599</code>: Suppala</li>
+                <li><code>600+</code>: Salo / Turku</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3 class="case-study-subhead">Admin</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/admin.png" alt="Admin panel showing full worker list">
+            <figcaption class="case-study-caption">Admin panel: full worker list</figcaption>
+          </figure>
+          <ul>
+            <li>Views all 300+ workers</li>
+            <li>Receives all supervisor daily logs</li>
+            <li>Auto-sorts worklogs by house group and work number</li>
+            <li>Sends each group worklog to the correct housemaster</li>
+            <li>Simultaneously sends to payroll for verification</li>
+            <li>Invites new users with role assignment via email</li>
+            <li>Manages all roles: worker, supervisor, housemaster, payroll, admin</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Payroll</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/payroll.png" alt="Payroll verification page comparing supervisor and worker hours">
+            <figcaption class="case-study-caption">Payroll verification: supervisor vs. worker hours</figcaption>
+          </figure>
+          <ul>
+            <li>Receives daily supervisor worklogs from admin for verification</li>
+            <li>Receives monthly paper submissions from workers</li>
+            <li>Smart verification system compares supervisor recorded hours vs. worker submitted hours</li>
+            <li>Shows match, mismatch, missing from worker, missing from supervisor per day</li>
+            <li>Approves, rejects, or flags submissions needing review</li>
+            <li>Exports verification reports as PDF</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Worker archive: daily worklog visibility</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/archive.png" alt="Worker archive showing chronological supervisor worklogs">
+            <figcaption class="case-study-caption">Worker archive, chronological worklog history</figcaption>
+          </figure>
+          <p>Every worker can log in and view the archive page, a chronological record of all supervisor worklogs recorded at the farm. Workers use this to cross-check their own recorded hours before submitting to payroll. Worklogs are stored by date and accessible to all workers regardless of house group. This gives every worker full transparency into what was recorded on the field by their supervisor, eliminating disputes over hours.</p>
+
+          <h3 class="case-study-subhead">Rannikon board: real-time farm display system</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/board.png" alt="Rannikon board showing real-time worklogs on a house television screen">
+            <figcaption class="case-study-caption">Real-time worklog display for house group televisions</figcaption>
+          </figure>
+          <p>Rannikon Puutarha is installing televisions in each house group building. These screens sync directly with the supervisor recording system in real time. As supervisors record worker arrivals, batches, and finish times on the field, the information appears live on the television screens in each house.</p>
+          <p>At weekends, the weekly worklogs are displayed on the house televisions. Workers can walk up to the screen and see their recorded hours, start times, finish times, and total hours for the week without needing to open the app.</p>
+          <p>This feature eliminates the need for housemasters to manually post worklogs to Facebook groups every day. The information reaches workers automatically through the screens installed in their living spaces.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">06 &middot; The Technical Stack</h2>
+
+          <ul>
+            <li>Frontend: <code>Next.js 16</code>, <code>React</code>, <code>jsPDF</code>, <code>jspdf-autotable</code>, <code>xlsx</code>, DM Sans font</li>
+            <li>Backend: <code>Fastify 5</code>, <code>PostgreSQL</code>, JWT authentication, Google OAuth</li>
+            <li>Database: Supabase EU West (Ireland)</li>
+            <li>Email: Resend (<code>noreply@rannikon.com</code>)</li>
+            <li>Mobile: <code>React Native</code> (Expo SDK 54), <code>expo-print</code>, <code>expo-sharing</code>, <code>expo-secure-store</code></li>
+            <li>Hosting: Render (web service + static site)</li>
+            <li>Languages: English, Ukrainian, Khmer (Cambodia), Vietnamese, Nepali</li>
+            <li>Version control: GitHub (<code>github.com/victorabuchi/rannikon</code>)</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Key technical decisions</h3>
+          <ul>
+            <li>Calculation engine lives entirely on the backend: no duplicate logic on the frontend</li>
+            <li>Dates stored as noon UTC to avoid timezone off-by-one errors in Finland (UTC+3)</li>
+            <li>JWT tokens with 30-day expiry stored in <code>localStorage</code></li>
+            <li>CORS configured explicitly to allow the <code>DELETE</code> method</li>
+            <li>Green paper entries live in a separate table (<code>green_paper_entries</code>) from field work entries (<code>timesheet_entries</code>)</li>
+            <li>Smart time input parsing: accepts <code>10:00</code>, <code>10.00</code>, <code>10,00</code>, and <code>1000</code> formats</li>
+          </ul>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">07 &middot; The Impact</h2>
+
+          <ul>
+            <li>300+ active workers using the system across 6 house groups</li>
+            <li>5 languages supported: workers use the app in their native language</li>
+            <li>Zero manual calculation errors: the engine handles all math automatically</li>
+            <li>Supervisors save hours daily: batch recording replaces manual notebooks</li>
+            <li>Payroll verification reduced from days to minutes</li>
+            <li>Lina Rannikko (farm manager) officially approved and endorsed the system</li>
+            <li>Published on Google Play Store</li>
+            <li>Farm manager connected Victor with other companies for potential projects</li>
+          </ul>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">08 &middot; What I Learned</h2>
+
+          <h3 class="case-study-subhead">1. Talk to real users first</h3>
+          <p>The calculation formula changed multiple times based on feedback from actual farm workers and payroll staff. Getting it right required understanding the physical paper forms workers had been using for years.</p>
+
+          <h3 class="case-study-subhead">2. Keep calculation logic in one place</h3>
+          <p>A major bug occurred early on because the frontend had its own copy of the calculation formula that diverged from the backend. Always have one source of truth.</p>
+
+          <h3 class="case-study-subhead">3. Build for the real context</h3>
+          <p>Workers use the app in fields with poor connectivity, on cheap Android phones, in languages other than English. Every design decision had to account for this.</p>
+
+          <h3 class="case-study-subhead">4. Start simple, add complexity gradually</h3>
+          <p>The system started as a basic timesheet calculator. Supervisor batch recording, payroll verification, and the berry picking green paper were all added based on direct requests from stakeholders.</p>
+
+          <h3 class="case-study-subhead">5. Personal relationships matter in business</h3>
+          <p>The project moved forward because of face-to-face meetings with Lina, Aleksi, and Johanna, not just emails or messages.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">09 &middot; Tech Links</h2>
+          <ul class="case-study-links">
+            <li>Live app: <a href="https://www.rannikon.com" target="_blank" rel="noopener">rannikon.com</a></li>
+            <li>GitHub: <a href="https://github.com/victorabuchi/rannikon" target="_blank" rel="noopener">github.com/victorabuchi/rannikon</a></li>
+            <li>Mobile (GitHub): <a href="https://github.com/victorabuchi/rannikon-mobile" target="_blank" rel="noopener">github.com/victorabuchi/rannikon-mobile</a></li>
+          </ul>
+        </section>
+
+      </div>
+
+      <div class="case-study-cta">
+        <p class="case-study-cta-text">Are you looking for a developer who can build real solutions for real problems?</p>
+        <a href="mailto:contact@victorabuchi.com" class="case-study-cta-email">contact@victorabuchi.com</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="site-footer-inner">
+      <ul class="site-footer-social">
+        <li><a href="https://github.com/victorabuchi" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/victor-abuchi-06b086338" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <span class="site-footer-copy">&copy; 2026 Victor Abuchi Oy</span>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
