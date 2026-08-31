@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     sendBtn.disabled = true;
     sendBtn.textContent = 'Sending…';
 
-    const subject = encodeURIComponent(`Message from ${name} — victorabuchi.com`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    const subject = encodeURIComponent(`Message from ${name} (victorabuchi.com)`);
+    const body = encodeURIComponent(`${message}\n\nFrom: ${name} (${email})`);
     const mailtoUrl = `mailto:contact@victorabuchi.com?subject=${subject}&body=${body}`;
 
     window.setTimeout(() => {
