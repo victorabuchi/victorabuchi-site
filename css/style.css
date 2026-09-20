@@ -852,6 +852,11 @@ html[lang="fi"] .hero-name {
   gap: 1rem 2rem;
 }
 
+.section-head-row > div {
+  flex: 1 1 24rem;
+  max-width: 44rem;
+}
+
 .section-eyebrow {
   margin: 0 0 0.6rem;
   font-size: 14px;
@@ -1392,36 +1397,99 @@ html[lang="fi"] .hero-name {
   to { transform: translateX(-100%); }
 }
 
-/* --- Process --- */
+/* --- Two ways to start --- */
 
-.steps {
+.ways {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
+}
+
+@media (min-width: 64rem) {
+  .ways {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.way {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  background: var(--color-tile);
+  border-radius: 28px;
+}
+
+.way-featured {
+  background:
+    radial-gradient(70% 55% at 100% 0%, rgba(41, 151, 255, 0.16), transparent 70%),
+    radial-gradient(60% 50% at 0% 100%, rgba(191, 90, 242, 0.14), transparent 70%),
+    var(--color-tile);
+  box-shadow: inset 0 0 0 1px rgba(41, 151, 255, 0.35);
+}
+
+.way-eyebrow {
+  margin: 0 0 0.6rem;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+  color: var(--color-ink-soft);
+}
+
+.way-featured .way-eyebrow {
+  color: var(--color-link);
+}
+
+.way-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.625rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.125;
+  letter-spacing: -0.003em;
+}
+
+.way-lede {
+  margin: 0.75rem 0 1.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.4705882353;
+  color: var(--color-ink-soft);
+}
+
+.way-steps {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-@media (min-width: 64rem) {
-  .steps {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-}
-
-.step {
+.way-step {
   position: relative;
-  padding: 1.75rem 1.5rem;
-  background: var(--color-tile);
-  border-radius: var(--radius-tile);
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.35rem;
 }
 
-.step-num {
+.way-step:last-child {
+  padding-bottom: 0;
+}
+
+/* the line joining one step to the next */
+.way-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 0.9375rem;
+  top: 2.1rem;
+  bottom: 0.15rem;
+  width: 2px;
+  background: var(--color-rule);
+}
+
+.way-num {
+  position: relative;
+  flex: none;
   display: grid;
   place-items: center;
   width: 2rem;
   height: 2rem;
-  margin-bottom: 1.1rem;
   font-size: 14px;
   font-weight: 600;
   color: #fff;
@@ -1429,8 +1497,8 @@ html[lang="fi"] .hero-name {
   border-radius: 50%;
 }
 
-.step-title {
-  margin: 0 0 0.5rem;
+.way-step-title {
+  margin: 0.2rem 0 0.25rem;
   font-family: var(--font-display);
   font-size: 1.3125rem;
   font-weight: 600;
@@ -1438,12 +1506,24 @@ html[lang="fi"] .hero-name {
   letter-spacing: 0.011em;
 }
 
-.step-text {
+.way-step-text {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  letter-spacing: -0.016em;
+  font-size: 1.0625rem;
+  line-height: 1.4705882353;
   color: var(--color-ink-soft);
+}
+
+.way-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1.25rem;
+  margin: 1.75rem 0 0;
+  padding-top: 1.25rem;
+  font-size: 1.0625rem;
+  line-height: 1.4705882353;
+  color: var(--color-ink);
+  border-top: 1px solid var(--color-rule);
 }
 
 /* --- Closing banner (like the Developer Program banner) --- */
@@ -1723,6 +1803,30 @@ html[lang="fi"] .hero-name {
   .skill-category {
     flex: none;
   }
+}
+
+/* Process page: the two ways of working */
+
+.process-group-title {
+  margin: 4rem 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.1428571429;
+  letter-spacing: 0.007em;
+  color: var(--color-ink);
+}
+
+.process-group-title:first-of-type {
+  margin-top: 0;
+}
+
+.process-group-note {
+  margin: 0 0 1.75rem;
+  max-width: 40rem;
+  font-size: 1.0625rem;
+  line-height: 1.4705882353;
+  color: var(--color-ink-soft);
 }
 
 /* -------------------------------------------------------- */
