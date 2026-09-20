@@ -1696,23 +1696,18 @@ a.ledger-name:hover {
   color: var(--color-ink-soft);
 }
 
-.contact-primary {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: 1.1428571429;
-  letter-spacing: 0.007em;
-  color: var(--color-link);
-}
-
+.contact-primary,
 .contact-secondary {
-  font-size: 1.0625rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1666666667;
+  letter-spacing: 0.009em;
   color: var(--color-link);
 }
 
 .contact-form-wrap {
-  align-self: stretch;
-  margin-top: 3rem;
+  margin: 3rem 0 0 -2.5rem;
   padding: 2.5rem;
   background: var(--color-tile);
   border-radius: var(--radius-tile);
@@ -1722,10 +1717,10 @@ a.ledger-name:hover {
   display: block;
   margin-bottom: 1.75rem;
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   font-weight: 600;
-  line-height: 1.1666666667;
-  letter-spacing: 0.009em;
+  line-height: 1.1904761905;
+  letter-spacing: 0.011em;
   color: var(--color-ink);
 }
 
@@ -1825,8 +1820,11 @@ a.ledger-name:hover {
 }
 
 @media (max-width: 40rem) {
+  /* full-bleed on phones: card padding equals the page gutter, so text stays aligned */
   .contact-form-wrap {
-    padding: 1.5rem;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 2rem var(--gutter);
+    border-radius: 0;
   }
 }
 
