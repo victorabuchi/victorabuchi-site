@@ -414,20 +414,27 @@ function initReveal() {
   });
 }
 
-// Cycle the words in "I build ..." in the hero.
+// Cycle the words in "I build ..." in the hero, each with its own logo.
 function initRotator() {
   const el = document.querySelector('[data-rotator]');
   if (!el || REDUCED_MOTION) return;
-  const words = (el.dataset.words || '').split('|').filter(Boolean);
-  if (words.length < 2) return;
+
+  let items = [];
+  try { items = JSON.parse(el.dataset.items || '[]'); } catch (err) { return; }
+  if (items.length < 2) return;
+
+  const img = el.querySelector('.rotator-logo img');
+  const word = el.querySelector('.rotator-word');
+  items.forEach((item) => { new Image().src = item.logo; }); // warm the cache so swaps never flash
 
   let index = 0;
   window.setInterval(() => {
     if (document.hidden) return;
     el.classList.add('is-out');
     window.setTimeout(() => {
-      index = (index + 1) % words.length;
-      el.textContent = words[index];
+      index = (index + 1) % items.length;
+      img.src = items[index].logo;
+      word.textContent = items[index].text;
       el.classList.remove('is-out');
     }, 300);
   }, 2600);
