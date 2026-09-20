@@ -1721,77 +1721,40 @@ html[lang="fi"] .hero-name {
   flex: none;
 }
 
-/* logos orbiting a monogram */
+/* your full photo, uncropped, in a gradient frame with logos floating around it */
 .orbit {
   --px: 0;
   --py: 0;
   position: relative;
-  width: min(28rem, 86vw);
-  aspect-ratio: 1;
+  width: min(34rem, 100%);
   margin-inline: auto;
 }
 
-.orbit::before,
-.orbit::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.orbit::before {
-  inset: 9%;
-  border: 1px dashed var(--color-rule);
-}
-
-.orbit::after {
-  inset: 26%;
-  border: 1px solid var(--color-rule);
-  opacity: 0.6;
-}
-
-.orbit-core {
-  position: absolute;
-  inset: 35%;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 7vw, 3.5rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: #fff;
-  background: linear-gradient(145deg, #2997ff, #bf5af2 65%, #ff9f0a);
-  border-radius: 28%;
-  box-shadow: 0 24px 70px rgba(41, 151, 255, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  translate: calc(var(--px) * -3px) calc(var(--py) * -3px);
-  transition: translate 0.3s ease-out;
-}
-
-/* your photo takes the monogram's place: gradient ring, squircle crop */
-.orbit-photo {
-  inset: 28%;
+.photo-frame {
+  margin: 0;
   padding: 4px;
+  background: linear-gradient(145deg, #2997ff, #bf5af2 65%, #ff9f0a);
+  border-radius: 30px;
+  box-shadow: 0 30px 80px rgba(41, 151, 255, 0.28);
 }
 
-.orbit-photo img {
+.photo-frame img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 28%;
-  border-radius: 24%;
+  height: auto;
+  border-radius: 26px;
 }
 
 .orbit-logo {
   position: absolute;
   left: var(--x);
   top: var(--y);
-  width: 17%;
+  width: 15%;
   aspect-ratio: 1;
-  padding: 3.5%;
+  padding: 3%;
   background: #fff;
   border-radius: 24%;
-  box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.22), 0 10px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.22), 0 10px 30px rgba(0, 0, 0, 0.22);
   translate: calc(-50% + var(--px) * var(--d) * 1px) calc(-50% + var(--py) * var(--d) * 1px);
   transition: translate 0.3s ease-out;
   animation: orbit-float 6s ease-in-out infinite;
@@ -2170,7 +2133,6 @@ html[lang="fi"] .hero-name {
     animation: none;
   }
 
-  .orbit-core,
   .orbit-logo {
     transition: none;
   }
