@@ -258,7 +258,7 @@ function initSearch() {
 
 function initNavMenu() {
   const header = document.querySelector('header');
-  const links = document.querySelectorAll('.site-nav-links a');
+  const links = document.querySelectorAll('.site-nav-links a, .site-nav-cta');
   if (!header || !links.length || !T.menu) return;
 
   const desktop = window.matchMedia('(min-width: 64rem) and (hover: hover)');

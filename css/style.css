@@ -267,6 +267,31 @@ header {
   color: var(--color-ink);
 }
 
+/* blue pill, like the Sign in button on the Apple Developer nav */
+.site-nav-cta {
+  flex: 0 0 auto;
+  margin-left: 0.75rem;
+  padding: 0.4rem 1rem;
+  font-size: 14px;
+  line-height: 1.2857142857;
+  letter-spacing: -0.016em;
+  color: var(--color-button-text);
+  background: var(--color-blue);
+  border-radius: 980px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.site-nav-cta:hover {
+  background: var(--color-blue-hover);
+  text-decoration: none;
+}
+
+.site-nav-cta:active {
+  background: var(--color-blue-active);
+}
+
 @media (max-width: 64rem) {
   .site-nav-links {
     gap: 1.25rem;
@@ -284,7 +309,7 @@ header {
 @media (max-width: 40rem) {
   .site-nav {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
     align-items: center;
   }
 
@@ -297,7 +322,13 @@ header {
   .site-nav-search {
     grid-column: 2;
     grid-row: 1;
-    margin: 12px -8px 0 0;
+    margin: 12px 0 0;
+  }
+
+  .site-nav-cta {
+    grid-column: 3;
+    grid-row: 1;
+    margin: 12px 0 0 0.25rem;
   }
 
   .site-nav-links {
