@@ -84,21 +84,33 @@ function initThemeSwitcher() {
     });
   }
 
+  // localStorage first; a cookie backs it up where storage is blocked (private mode, in-app browsers)
+  function readSaved() {
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (err) { /* ignore */ }
+    if (!saved) {
+      const match = document.cookie.match(/(?:^|; )theme=(light|dark)/);
+      saved = match && match[1];
+    }
+    return saved === 'light' || saved === 'dark' ? saved : null;
+  }
+
+  function save(choice) {
+    try {
+      if (choice === 'auto') localStorage.removeItem('theme');
+      else localStorage.setItem('theme', choice);
+    } catch (err) { /* ignore */ }
+    document.cookie = choice === 'auto'
+      ? 'theme=; path=/; max-age=0; SameSite=Lax'
+      : `theme=${choice}; path=/; max-age=31536000; SameSite=Lax`;
+  }
+
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const choice = btn.dataset.themeChoice;
-      try {
-        if (choice === 'auto') {
-          delete root.dataset.theme;
-          localStorage.removeItem('theme');
-        } else {
-          root.dataset.theme = choice;
-          localStorage.setItem('theme', choice);
-        }
-      } catch (err) {
-        if (choice === 'auto') delete root.dataset.theme;
-        else root.dataset.theme = choice;
-      }
+      if (choice === 'auto') delete root.dataset.theme;
+      else root.dataset.theme = choice;
+      save(choice);
       render();
     });
   });
@@ -107,9 +119,8 @@ function initThemeSwitcher() {
 
   // Keep every open tab / restored page in step with the saved choice.
   function syncFromStorage() {
-    let saved = null;
-    try { saved = localStorage.getItem('theme'); } catch (err) { /* ignore */ }
-    if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+    const saved = readSaved();
+    if (saved) root.dataset.theme = saved;
     else delete root.dataset.theme;
     render();
   }
@@ -117,9 +128,7 @@ function initThemeSwitcher() {
   window.addEventListener('storage', (event) => {
     if (event.key === 'theme' || event.key === null) syncFromStorage();
   });
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) syncFromStorage();
-  });
+  window.addEventListener('pageshow', syncFromStorage);
 }
 
 /* -------------------------------------------------------- */
