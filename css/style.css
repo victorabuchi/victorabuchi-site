@@ -2930,7 +2930,23 @@ span.example-ref {
   }
 
   .sk-marquee {
-    overflow-x: auto;
+    margin-inline: 0;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .sk-row {
+    width: auto;
+  }
+
+  .sk-set {
+    flex-wrap: wrap;
+  }
+
+  .sk-set[aria-hidden="true"],
+  .sk-set li:nth-child(n + 9) {
+    display: none;
   }
 }
 
