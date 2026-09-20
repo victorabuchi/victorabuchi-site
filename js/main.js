@@ -237,7 +237,19 @@ function initSearch() {
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && overlay.classList.contains('is-open')) close();
+
+    // "/" or Cmd/Ctrl+K opens search, unless the user is typing somewhere
+    const tag = (event.target.tagName || '').toLowerCase();
+    const typing = tag === 'input' || tag === 'textarea' || tag === 'select' || event.target.isContentEditable;
+    const slash = event.key === '/' && !typing && !event.metaKey && !event.ctrlKey && !event.altKey;
+    const combo = (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k';
+    if ((slash || combo) && !overlay.classList.contains('is-open')) {
+      event.preventDefault();
+      open();
+    }
   });
+
+  document.querySelectorAll('[data-open-search]').forEach((el) => el.addEventListener('click', open));
 }
 
 /* -------------------------------------------------------- */
@@ -371,6 +383,126 @@ function initLanguageSelect() {
 }
 
 /* -------------------------------------------------------- */
+/* Landing page                                                */
+/* -------------------------------------------------------- */
+
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Fade sections in as they scroll into view. Content stays visible if JS or
+// IntersectionObserver is unavailable, or when the user prefers reduced motion.
+function initReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length || REDUCED_MOTION || !('IntersectionObserver' in window)) return;
+
+  document.documentElement.classList.add('js-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.classList.add('is-visible');
+      observer.unobserve(el);
+      // drop the stagger delay afterwards so hover effects stay snappy
+      window.setTimeout(() => { el.style.transitionDelay = ''; }, 1200);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  items.forEach((el) => {
+    const siblings = el.parentElement ? Array.from(el.parentElement.children).filter((c) => c.classList.contains('reveal')) : [];
+    const index = siblings.indexOf(el);
+    if (index > 0) el.style.transitionDelay = `${Math.min(index, 6) * 70}ms`;
+    observer.observe(el);
+  });
+}
+
+// Cycle the words in "I build ..." in the hero.
+function initRotator() {
+  const el = document.querySelector('[data-rotator]');
+  if (!el || REDUCED_MOTION) return;
+  const words = (el.dataset.words || '').split('|').filter(Boolean);
+  if (words.length < 2) return;
+
+  let index = 0;
+  window.setInterval(() => {
+    if (document.hidden) return;
+    el.classList.add('is-out');
+    window.setTimeout(() => {
+      index = (index + 1) % words.length;
+      el.textContent = words[index];
+      el.classList.remove('is-out');
+    }, 300);
+  }, 2600);
+}
+
+// Soft glow that follows the pointer across the hero.
+function initHeroGlow() {
+  const hero = document.getElementById('hero');
+  if (!hero || REDUCED_MOTION || !window.matchMedia('(hover: hover)').matches) return;
+  hero.addEventListener('pointermove', (event) => {
+    const rect = hero.getBoundingClientRect();
+    hero.style.setProperty('--mx', `${((event.clientX - rect.left) / rect.width) * 100}%`);
+    hero.style.setProperty('--my', `${((event.clientY - rect.top) / rect.height) * 100}%`);
+  });
+}
+
+// Featured-work carousel: arrow buttons scroll one card; arrows disable at the ends.
+function initCarousels() {
+  document.querySelectorAll('[data-carousel]').forEach((root) => {
+    const track = root.querySelector('.carousel-track');
+    const prev = root.querySelector('[data-carousel-prev]');
+    const next = root.querySelector('[data-carousel-next]');
+    if (!track || !prev || !next) return;
+
+    const step = () => {
+      const card = track.querySelector('.project-card');
+      return card ? card.getBoundingClientRect().width + 20 : 320;
+    };
+    const update = () => {
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    };
+
+    prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+}
+
+// Count the numbers up once they scroll into view.
+function initCounters() {
+  const counters = document.querySelectorAll('[data-count]');
+  if (!counters.length || REDUCED_MOTION || !('IntersectionObserver' in window)) return;
+
+  const run = (el) => {
+    const end = Number(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = `${Math.round(end * eased)}${suffix}`;
+      if (progress < 1) window.requestAnimationFrame(tick);
+    };
+    window.requestAnimationFrame(tick);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      run(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.6 });
+
+  counters.forEach((el) => {
+    el.textContent = `0${el.dataset.suffix || ''}`;
+    observer.observe(el);
+  });
+}
+
+/* -------------------------------------------------------- */
 /* Project folders: open the folder holding a #hash target     */
 /* -------------------------------------------------------- */
 
@@ -393,6 +525,11 @@ function initProjectFolders() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initReveal();
+  initRotator();
+  initHeroGlow();
+  initCarousels();
+  initCounters();
   initProjectFolders();
   initThemeSwitcher();
   initNavMenu();

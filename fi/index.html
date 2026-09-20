@@ -8,7 +8,7 @@
   <link rel="alternate" hreflang="fi" href="https://victorabuchi.com/fi/">
   <link rel="alternate" hreflang="x-default" href="https://victorabuchi.com/">
   <script>(function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}if(!t){var m=document.cookie.match(/(?:^|; )theme=(light|dark)/);t=m&&m[1]}if(t==='light'||t==='dark')document.documentElement.dataset.theme=t})()</script>
-  <link rel="stylesheet" href="/css/style.css?v=8">
+  <link rel="stylesheet" href="/css/style.css?v=9">
 </head>
 <body>
 
@@ -35,12 +35,226 @@
 
   <main>
     <section id="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-inner">
+        <p class="hero-badge"><span class="hero-badge-dot" aria-hidden="true"></span>Avoinna freelance-projekteille</p>
         <h1 class="hero-name">Ohjelmistokehittäjä</h1>
+        <p class="hero-rotator">Rakennan <span class="rotator-word" data-rotator data-words="verkkopalveluita|Android-sovelluksia|iOS-sovelluksia|Shopify-sovelluksia|Shopify-teemoja|räätälöityjä verkkosivustoja">verkkopalveluita</span></p>
         <p class="hero-statement">Suunnittelen ja rakennan ohjelmistoja alusta alkaen: SaaS-alustoja, freelance-projekteja, mitä tahansa ongelma oikeasti vaatii. Ei valmispohjia, ei oikoteitä.</p>
+        <div class="hero-actions">
+          <a class="button" href="/fi/projects/">Katso projektit</a>
+          <a class="link-more" href="/fi/contact/">Ota yhteyttä</a>
+        </div>
+        <div class="chip-row" role="navigation" aria-label="Tutustu nyt">
+          <span class="chip-label">Tutustu nyt</span>
+          <a class="chip" href="/fi/projects/">Projektit</a>
+          <a class="chip" href="/fi/case-studies/">Case-esimerkit</a>
+          <a class="chip" href="/fi/services/">Palvelut</a>
+          <a class="chip" href="/fi/resume/">CV</a>
+          <a class="chip" href="/fi/contact/">Yhteystiedot</a>
+          <button type="button" class="chip chip-search" data-open-search>Haku <kbd>/</kbd></button>
+        </div>
       </div>
     </section>
 
+    <section id="build" class="home-section">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Mitä rakennan</p>
+        <h2 class="section-title">Ensimmäisestä commitista julkaisuun.</h2>
+        <p class="section-lede">Web, mobiili ja Shopify: suunniteltu ja koodattu alusta alkaen, ei valmispohjia.</p>
+      </div>
+      <div class="tile-grid">
+          <a class="tile reveal" href="/fi/projects/#onshipy" style="--accent: 210">
+            <span class="tile-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9z"/></svg></span>
+            <h3 class="tile-title">Verkkopalvelut</h3>
+            <p class="tile-text">Multi-tenant-alustoja, SaaS-tuotteita ja täyden pinon web-sovelluksia, jotka skaalautuvat.</p>
+            <span class="tile-link">Lue lisää</span>
+          </a>
+          <a class="tile reveal" href="/fi/projects/#kuopas-mobile" style="--accent: 262">
+            <span class="tile-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+            <h3 class="tile-title">Mobiilisovellukset</h3>
+            <p class="tile-text">Android- ja iOS-sovelluksia React Nativella ja Expolla.</p>
+            <span class="tile-link">Lue lisää</span>
+          </a>
+          <a class="tile reveal" href="/fi/projects/#onshipy-shopify-app" style="--accent: 150">
+            <span class="tile-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span>
+            <h3 class="tile-title">Shopify-sovellukset</h3>
+            <p class="tile-text">Räätälöityjä upotettuja sovelluksia, jotka vievät kaupan valmissovelluksia pidemmälle.</p>
+            <span class="tile-link">Lue lisää</span>
+          </a>
+          <a class="tile reveal" href="/fi/projects/#blanc" style="--accent: 330">
+            <span class="tile-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></span>
+            <h3 class="tile-title">Shopify-teemat</h3>
+            <p class="tile-text">Online Store 2.0 -teemoja, jotka on rakennettu tyhjästä Liquidilla.</p>
+            <span class="tile-link">Lue lisää</span>
+          </a>
+          <a class="tile reveal" href="/fi/services/" style="--accent: 28">
+            <span class="tile-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9h18"/><circle cx="6.2" cy="6.8" r=".6"/><circle cx="8.6" cy="6.8" r=".6"/></svg></span>
+            <h3 class="tile-title">Räätälöidyt verkkosivustot</h3>
+            <p class="tile-text">Alusta alkaen koodattuja sivustoja, jotka sopivat brändiin, ei toisin päin.</p>
+            <span class="tile-link">Lue lisää</span>
+          </a>
+          <a class="tile reveal" href="/fi/services/" style="--accent: 190">
+            <span class="tile-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.6"/><path d="M5.6 5.6l3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"/></svg></span>
+            <h3 class="tile-title">Jatkuva tuki</h3>
+            <p class="tile-text">Korjauksia, päivityksiä ja uusia ominaisuuksia kehittäjältä, joka tuntee koodin jo.</p>
+            <span class="tile-link">Lue lisää</span>
+          </a>
+      </div>
+    </section>
+
+    <section id="featured" class="home-section">
+      <div class="section-head section-head-row reveal">
+        <div>
+          <p class="section-eyebrow">Valikoituja töitä</p>
+          <h2 class="section-title">Asioita, joita olen rakentanut.</h2>
+        </div>
+        <a class="link-more" href="/fi/projects/">Kaikki projektit</a>
+      </div>
+      <div class="carousel reveal" data-carousel>
+        <div class="carousel-track" tabindex="0" role="region" aria-label="Valitut projektit">
+            <a class="project-card" href="/fi/case-studies/rannikon/" style="--accent: 140">
+              <span class="project-card-tag">Case-esimerkki</span>
+              <h3 class="project-card-title">Rannikon</h3>
+              <p class="project-card-text">Marjatilan työntekijöiden työaikajärjestelmä Rannikon Puutarhalle: tunnit, palkkayhteenvedot ja vienti PDF- tai Excel-muotoon.</p>
+              <span class="project-card-meta">Next.js · Fastify · PostgreSQL</span>
+              <span class="project-card-cta">Lue case-esimerkki</span>
+            </a>
+            <a class="project-card" href="https://kuopas.com" target="_blank" rel="noopener" style="--accent: 210">
+              <span class="project-card-tag">Web-sovellus</span>
+              <h3 class="project-card-title">Kuopas</h3>
+              <p class="project-card-text">Opiskelija-asumisen sovellus Kuopakselle Kuopiossa: rakennuksen chat, ilmoitustaulu, valitukset, pyykki-, sauna- ja parkkipaikkavaraukset sekä henkilökunnan työkalut.</p>
+              <span class="project-card-meta">TypeScript</span>
+              <span class="project-card-cta">Vieraile sivustolla</span>
+            </a>
+            <a class="project-card" href="https://www.onshipy.com" target="_blank" rel="noopener" style="--accent: 275">
+              <span class="project-card-tag">Web-sovellus</span>
+              <h3 class="project-card-title">Onshipy</h3>
+              <p class="project-card-text">Dropshipping-automaatio: tuo tuotteita Nikelta, ASOSilta, Amazonilta ja yli 900 brändiltä ja myy Shopifyn kautta.</p>
+              <span class="project-card-meta">JavaScript</span>
+              <span class="project-card-cta">Vieraile sivustolla</span>
+            </a>
+            <a class="project-card" href="https://github.com/victorabuchi/Swifrly" target="_blank" rel="noopener" style="--accent: 28">
+              <span class="project-card-tag">Sovellus</span>
+              <h3 class="project-card-title">Swifrly</h3>
+              <p class="project-card-text">Rahoituskerros, joka yhdistää kryptovaluutat todelliseen maailmaan: kaupankäynti, vaihto, maksut ja korttiostokset yhdessä sovelluksessa.</p>
+              <span class="project-card-meta">TypeScript</span>
+              <span class="project-card-cta">Katso GitHubissa</span>
+            </a>
+            <a class="project-card" href="https://knewler.com" target="_blank" rel="noopener" style="--accent: 245">
+              <span class="project-card-tag">Web-sovellus</span>
+              <h3 class="project-card-title">Knewler</h3>
+              <p class="project-card-text">Multi-tenant-verkko-oppimisalusta: yliopistot, yritykset ja urheiluseurat käynnistävät oman brändätyn koulutusympäristön minuuteissa.</p>
+              <span class="project-card-meta">TypeScript</span>
+              <span class="project-card-cta">Vieraile sivustolla</span>
+            </a>
+            <a class="project-card" href="https://github.com/victorabuchi/blanc" target="_blank" rel="noopener" style="--accent: 330">
+              <span class="project-card-tag">Shopify-teema</span>
+              <h3 class="project-card-title">Blanc</h3>
+              <p class="project-card-text">Räätälöity Shopify Online Store 2.0 -teema muoti- ja label-tyylisille verkkokaupoille reunasta reunaan ulottuvin tuoteruudukoin.</p>
+              <span class="project-card-meta">Liquid</span>
+              <span class="project-card-cta">Katso GitHubissa</span>
+            </a>
+            <a class="project-card" href="https://github.com/victorabuchi/onshipy-shopify-app" target="_blank" rel="noopener" style="--accent: 160">
+              <span class="project-card-tag">Shopify-sovellus</span>
+              <h3 class="project-card-title">Onshipy Shopify-sovellus</h3>
+              <p class="project-card-text">Onshipyn upotettu Shopify-sovellus, rakennettu Next.js:llä, Polarisilla ja App Bridgellä. Yhdistää alustan kauppiaan kauppaan.</p>
+              <span class="project-card-meta">JavaScript</span>
+              <span class="project-card-cta">Katso GitHubissa</span>
+            </a>
+        </div>
+        <div class="carousel-controls">
+          <button type="button" class="carousel-btn" data-carousel-prev aria-label="Edellinen"><span aria-hidden="true">‹</span></button>
+          <button type="button" class="carousel-btn" data-carousel-next aria-label="Seuraava"><span aria-hidden="true">›</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="numbers" class="home-section">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Case-esimerkki</p>
+        <h2 class="section-title">Rannikon lukuina.</h2>
+        <p class="section-lede">Työaika- ja palkanlaskentajärjestelmä, joka pyörittää marjatilan kautta ensimmäisestä vuorosta viimeiseen palkkalaskelmaan.</p>
+      </div>
+      <div class="stats">
+          <div class="stat reveal">
+            <span class="stat-value" data-count="300" data-suffix="+">300+</span>
+            <span class="stat-label">kausityöntekijää käyttää sitä</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-value" data-count="6" data-suffix="">6</span>
+            <span class="stat-label">majoitusryhmää</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-value" data-count="5" data-suffix="">5</span>
+            <span class="stat-label">kieltä tuettuna</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-value" data-count="4" data-suffix="">4</span>
+            <span class="stat-label">paperilomaketta laskettu automaattisesti</span>
+          </div>
+      </div>
+      <p class="numbers-link reveal"><a class="link-more" href="/fi/case-studies/rannikon/">Lue case-esimerkki</a></p>
+    </section>
+
+    <section id="stack" class="home-section">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Rakennettu näillä</p>
+        <h2 class="section-title">Työkalut, joihin tartun.</h2>
+      </div>
+      <div class="ticker reveal">
+        <ul class="ticker-track"><li class="ticker-chip">TypeScript</li><li class="ticker-chip">Next.js</li><li class="ticker-chip">React</li><li class="ticker-chip">React Native</li><li class="ticker-chip">Expo</li><li class="ticker-chip">Node.js</li><li class="ticker-chip">Fastify</li><li class="ticker-chip">PostgreSQL</li><li class="ticker-chip">Supabase</li><li class="ticker-chip">Shopify Liquid</li><li class="ticker-chip">Shopify Polaris</li><li class="ticker-chip">Tailwind CSS</li><li class="ticker-chip">Stripe</li><li class="ticker-chip">Cloudflare</li><li class="ticker-chip">Render</li><li class="ticker-chip">Git / GitHub</li></ul>
+        <ul class="ticker-track" aria-hidden="true"><li class="ticker-chip">TypeScript</li><li class="ticker-chip">Next.js</li><li class="ticker-chip">React</li><li class="ticker-chip">React Native</li><li class="ticker-chip">Expo</li><li class="ticker-chip">Node.js</li><li class="ticker-chip">Fastify</li><li class="ticker-chip">PostgreSQL</li><li class="ticker-chip">Supabase</li><li class="ticker-chip">Shopify Liquid</li><li class="ticker-chip">Shopify Polaris</li><li class="ticker-chip">Tailwind CSS</li><li class="ticker-chip">Stripe</li><li class="ticker-chip">Cloudflare</li><li class="ticker-chip">Render</li><li class="ticker-chip">Git / GitHub</li></ul>
+      </div>
+    </section>
+
+    <section id="how" class="home-section">
+      <div class="section-head section-head-row reveal">
+        <div>
+          <p class="section-eyebrow">Työtapani</p>
+          <h2 class="section-title">Yksinkertainen prosessi.</h2>
+        </div>
+        <a class="link-more" href="/fi/process/">Lisää prosessista</a>
+      </div>
+      <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">1</span>
+            <h3 class="step-title">Kartoitus</h3>
+            <p class="step-text">Lyhyt puhelu tai kirjallinen brief, jotta ymmärrän ongelman, kohderyhmän ja sen, miltä onnistuminen näyttää.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">2</span>
+            <h3 class="step-title">Tarjous</h3>
+            <p class="step-text">Selkeä laajuus, aikataulu ja hinta sovittuna ennen kuin riviäkään koodia kirjoitetaan.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">3</span>
+            <h3 class="step-title">Toteutus</h3>
+            <p class="step-text">Räätälöity koodi ja säännölliset tarkistuspalaverit, ettei luovutuksessa tule yllätyksiä.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">4</span>
+            <h3 class="step-title">Julkaisu</h3>
+            <p class="step-text">Julkaistu, testattu ja luovutettu niin, että kaikki on dokumentoitu.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">5</span>
+            <h3 class="step-title">Tuki</h3>
+            <p class="step-text">Jatkuvat korjaukset ja uudet ominaisuudet joltakulta, joka tuntee koodin jo.</p>
+          </li>
+      </ol>
+    </section>
+
+    <section id="cta">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">Onko sinulla projekti mielessä?</h2>
+        <p class="cta-text">Brändiyhteistöihin, freelance-projekteihin tai ihan vain alan juttuun.</p>
+        <div class="cta-actions">
+          <a class="button button-light" href="mailto:contact@victorabuchi.com">Lähetä sähköpostia</a>
+          <a class="button button-outline" href="/fi/services/">Katso palvelut</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -132,7 +346,7 @@
     </div>
   </footer>
 
-  <script src="/js/i18n.js?v=8"></script>
-  <script src="/js/main.js?v=8"></script>
+  <script src="/js/i18n.js?v=9"></script>
+  <script src="/js/main.js?v=9"></script>
 </body>
 </html>
