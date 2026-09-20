@@ -3665,6 +3665,61 @@ span.example-ref {
   }
 }
 
+/* Testimonials + blog */
+.testi-request {
+  max-width: 44rem;
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  background: var(--color-tile);
+  border-radius: 24px;
+}
+
+.testi-title {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.testi-text {
+  margin: 0 0 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.4705882353;
+  color: var(--color-ink-soft);
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.quote-card {
+  margin: 0;
+  padding: 2rem;
+  background: var(--color-tile);
+  border-radius: 24px;
+}
+
+.quote-card blockquote {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  line-height: 1.3;
+}
+
+.quote-card figcaption {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: var(--color-ink-soft);
+}
+
+.quote-card figcaption strong {
+  color: var(--color-ink);
+}
+
 /* -------------------------------------------------------- */
 /* Sections                                                    */
 /* -------------------------------------------------------- */
@@ -3676,6 +3731,8 @@ span.example-ref {
 #process,
 #resume,
 #skills,
+#blog,
+#testimonials,
 #contact {
   padding: 5rem var(--gutter) 6rem;
 }
@@ -3762,6 +3819,8 @@ span.example-ref {
   #process,
   #resume,
   #skills,
+  #blog,
+  #testimonials,
   #contact {
     padding: 3.5rem var(--gutter) 4rem;
   }
