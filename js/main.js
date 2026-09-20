@@ -469,36 +469,81 @@ function initCarousels() {
   });
 }
 
-// Count the numbers up once they scroll into view.
-function initCounters() {
-  const counters = document.querySelectorAll('[data-count]');
-  if (!counters.length || REDUCED_MOTION || !('IntersectionObserver' in window)) return;
+// Rannikon showcase: tabs switch screenshots, auto-advance with a progress line
+// (pauses on hover/focus, stops once the visitor picks a tab), and the browser
+// window tilts gently with the pointer.
+function initShowcase() {
+  document.querySelectorAll('[data-showcase]').forEach((root) => {
+    const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+    const screens = Array.from(root.querySelectorAll('.browser-screen'));
+    const captions = Array.from(root.querySelectorAll('.showcase-caption'));
+    const stage = root.querySelector('.showcase-stage');
+    const browser = root.querySelector('.browser');
+    if (tabs.length < 2) return;
 
-  const run = (el) => {
-    const end = Number(el.dataset.count);
-    const suffix = el.dataset.suffix || '';
-    const duration = 1400;
-    const start = performance.now();
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = `${Math.round(end * eased)}${suffix}`;
-      if (progress < 1) window.requestAnimationFrame(tick);
-    };
-    window.requestAnimationFrame(tick);
-  };
+    let current = 0;
+    let visitorChose = false;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      run(entry.target);
-      observer.unobserve(entry.target);
+    function select(index, focus) {
+      current = (index + tabs.length) % tabs.length;
+      tabs.forEach((tab, i) => {
+        const on = i === current;
+        tab.setAttribute('aria-selected', String(on));
+        tab.tabIndex = on ? 0 : -1;
+        screens[i].classList.toggle('is-active', on);
+        captions[i].classList.toggle('is-active', on);
+      });
+      if (focus) tabs[current].focus();
+      // restart the progress animation on the newly selected tab
+      root.classList.remove('is-playing');
+      void root.offsetWidth;
+      if (!visitorChose && autoplay) root.classList.add('is-playing');
+    }
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => { visitorChose = true; select(i); });
+      tab.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+          event.preventDefault();
+          visitorChose = true;
+          select(current + (event.key === 'ArrowRight' ? 1 : -1), true);
+        }
+      });
     });
-  }, { threshold: 0.6 });
 
-  counters.forEach((el) => {
-    el.textContent = `0${el.dataset.suffix || ''}`;
-    observer.observe(el);
+    // auto-advance only when motion is welcome and the section is on screen
+    const autoplay = !REDUCED_MOTION && 'IntersectionObserver' in window;
+    if (autoplay) {
+      root.addEventListener('animationend', (event) => {
+        if (event.animationName === 'showcase-progress' && !visitorChose) select(current + 1);
+      });
+      root.addEventListener('pointerenter', () => root.classList.add('is-paused'));
+      root.addEventListener('pointerleave', () => root.classList.remove('is-paused'));
+      root.addEventListener('focusin', () => root.classList.add('is-paused'));
+      root.addEventListener('focusout', () => root.classList.remove('is-paused'));
+      new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (visitorChose) return;
+          if (entry.isIntersecting) root.classList.add('is-playing');
+          else root.classList.remove('is-playing');
+        });
+      }, { threshold: 0.35 }).observe(root);
+    }
+
+    // pointer tilt
+    if (stage && browser && !REDUCED_MOTION && window.matchMedia('(hover: hover)').matches) {
+      stage.addEventListener('pointermove', (event) => {
+        const rect = stage.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        browser.style.setProperty('--ry', `${(x * 5).toFixed(2)}deg`);
+        browser.style.setProperty('--rx', `${(-y * 3).toFixed(2)}deg`);
+      });
+      stage.addEventListener('pointerleave', () => {
+        browser.style.setProperty('--ry', '0deg');
+        browser.style.setProperty('--rx', '0deg');
+      });
+    }
   });
 }
 
@@ -529,7 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRotator();
   initHeroGlow();
   initCarousels();
-  initCounters();
+  initShowcase();
   initProjectFolders();
   initThemeSwitcher();
   initNavMenu();
