@@ -604,6 +604,58 @@ function initOrbit() {
 }
 
 /* -------------------------------------------------------- */
+/* Skills page                                                 */
+/* -------------------------------------------------------- */
+
+// Vertical tabs: pick a skill area, see its tools. Arrow keys move between areas,
+// and #frontend, #backend ... in the address deep-links to one.
+function initSkills() {
+  document.querySelectorAll('[data-skills]').forEach((root) => {
+    const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+    const panels = Array.from(root.querySelectorAll('.skills-panel'));
+    if (tabs.length < 2) return;
+    root.classList.add('js-skills');
+    document.documentElement.classList.add('js-skills');
+
+    function select(index, focus, updateHash) {
+      tabs.forEach((tab, i) => {
+        const on = i === index;
+        tab.setAttribute('aria-selected', String(on));
+        tab.tabIndex = on ? 0 : -1;
+        panels[i].classList.toggle('is-active', on);
+      });
+      if (focus) tabs[index].focus();
+      if (updateHash) {
+        try { history.replaceState(null, '', '#' + panels[index].id.replace('skp-', '')); } catch (err) { /* ignore */ }
+      }
+    }
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(i, false, true));
+      tab.addEventListener('keydown', (event) => {
+        const keys = ['ArrowDown', 'ArrowRight', 'ArrowUp', 'ArrowLeft', 'Home', 'End'];
+        if (!keys.includes(event.key)) return;
+        event.preventDefault();
+        let next = i;
+        if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (i + 1) % tabs.length;
+        else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else next = tabs.length - 1;
+        select(next, true, true);
+      });
+    });
+
+    const fromHash = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      const index = panels.findIndex((p) => p.id === `skp-${id}`);
+      if (index >= 0) select(index, false, false);
+    };
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
+  });
+}
+
+/* -------------------------------------------------------- */
 /* Project folders: open the folder holding a #hash target     */
 /* -------------------------------------------------------- */
 
@@ -632,6 +684,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousels();
   initShowcase();
   initScrub();
+  initSkills();
   initOrbit();
   initProjectFolders();
   initThemeSwitcher();
