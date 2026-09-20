@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Victor Abuchi</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="alternate" hreflang="en" href="https://victorabuchi.com/projects/">
+  <link rel="alternate" hreflang="fi" href="https://victorabuchi.com/fi/projects/">
+  <link rel="alternate" hreflang="x-default" href="https://victorabuchi.com/projects/">
+  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="/css/style.css?v=7">
 </head>
 <body>
 
@@ -23,6 +27,9 @@
         <li><a href="/blog/">Blog</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
+      <button type="button" class="site-nav-search" aria-label="Search" aria-haspopup="dialog">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 10l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
     </nav>
   </header>
 
@@ -31,69 +38,181 @@
       <div class="projects-inner">
         <span class="section-label">Projects</span>
         <ul class="ledger-list">
-          <li class="ledger-row" id="rannikon">
-            <div class="ledger-item">
-              <span class="ledger-index">01</span>
-              <a class="ledger-name" href="https://rannikon.com" target="_blank" rel="noopener">Rannikon</a>
-              <span class="ledger-desc">Farm worker timesheet platform for Rannikon Puutarha: hours, pay-rate summaries, and exports to PDF or Excel. <a href="/case-studies/rannikon/">Read the case study</a>.</span>
-              <span class="ledger-meta">Next.js · Fastify · PostgreSQL</span>
-            </div>
+          <li class="ledger-row">
+            <details class="project-folder" id="folder-knewler">
+              <summary class="ledger-item">
+                <span class="ledger-index"><svg class="folder-icon" width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path fill="currentColor" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h5.2l2 2h9.8A1.5 1.5 0 0 1 21 5.5v9a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 1 14.5z"/></svg></span>
+                <span class="ledger-name">Knewler</span>
+                <span class="ledger-desc">Multi-tenant eLearning platform for universities, companies, and sports clubs.</span>
+                <span class="ledger-meta">1 project</span>
+              </summary>
+              <ul class="folder-items">
+                <li class="ledger-row" id="knewler">
+                  <a class="ledger-item" href="https://knewler.com" target="_blank" rel="noopener">
+                    <span class="ledger-index">Web app</span>
+                    <span class="ledger-name">Knewler</span>
+                    <span class="ledger-desc">Multi-tenant eLearning platform: universities, companies, and sports clubs launch a branded training environment in minutes.</span>
+                    <span class="ledger-meta">TypeScript</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
           </li>
-          <li class="ledger-row" id="rannikon-mobile">
-            <a class="ledger-item" href="https://github.com/victorabuchi/rannikon-mobile" target="_blank" rel="noopener">
-              <span class="ledger-index">02</span>
-              <span class="ledger-name">Rannikon Mobile</span>
-              <span class="ledger-desc">Mobile companion to the Rannikon Puutarha timesheet platform.</span>
-              <span class="ledger-meta">JavaScript</span>
-            </a>
+          <li class="ledger-row">
+            <details class="project-folder" id="folder-kuopas">
+              <summary class="ledger-item">
+                <span class="ledger-index"><svg class="folder-icon" width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path fill="currentColor" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h5.2l2 2h9.8A1.5 1.5 0 0 1 21 5.5v9a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 1 14.5z"/></svg></span>
+                <span class="ledger-name">Kuopas</span>
+                <span class="ledger-desc">Student housing app for Kuopas in Kuopio, as a web app and a mobile app.</span>
+                <span class="ledger-meta">2 projects</span>
+              </summary>
+              <ul class="folder-items">
+                <li class="ledger-row" id="kuopas">
+                  <a class="ledger-item" href="https://kuopas.com" target="_blank" rel="noopener">
+                    <span class="ledger-index">Web app</span>
+                    <span class="ledger-name">Kuopas</span>
+                    <span class="ledger-desc">Student housing app for Kuopas in Kuopio: building chat, noticeboard, complaints, laundry, sauna and parking booking, and staff tools, in Finnish and English.</span>
+                    <span class="ledger-meta">TypeScript</span>
+                  </a>
+                </li>
+                <li class="ledger-row" id="kuopas-mobile">
+                  <a class="ledger-item" href="https://github.com/victorabuchi/kuopas-mobile" target="_blank" rel="noopener">
+                    <span class="ledger-index">Mobile app</span>
+                    <span class="ledger-name">Kuopas Mobile</span>
+                    <span class="ledger-desc">Expo and React Native app for Kuopas on Android and iOS, bringing the noticeboard and building chats to mobile in Finnish and English.</span>
+                    <span class="ledger-meta">TypeScript</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
           </li>
-          <li class="ledger-row" id="onshipy">
-            <a class="ledger-item" href="https://www.onshipy.com" target="_blank" rel="noopener">
-              <span class="ledger-index">03</span>
-              <span class="ledger-name">Onshipy</span>
-              <span class="ledger-desc">Dropshipping automation: import from Nike, ASOS, Amazon and 900+ brands, and sell through Shopify.</span>
-              <span class="ledger-meta">JavaScript</span>
-            </a>
+          <li class="ledger-row">
+            <details class="project-folder" id="folder-onshipy">
+              <summary class="ledger-item">
+                <span class="ledger-index"><svg class="folder-icon" width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path fill="currentColor" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h5.2l2 2h9.8A1.5 1.5 0 0 1 21 5.5v9a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 1 14.5z"/></svg></span>
+                <span class="ledger-name">Onshipy</span>
+                <span class="ledger-desc">Dropshipping automation for resellers.</span>
+                <span class="ledger-meta">1 project</span>
+              </summary>
+              <ul class="folder-items">
+                <li class="ledger-row" id="onshipy">
+                  <a class="ledger-item" href="https://www.onshipy.com" target="_blank" rel="noopener">
+                    <span class="ledger-index">Web app</span>
+                    <span class="ledger-name">Onshipy</span>
+                    <span class="ledger-desc">Dropshipping automation: import from Nike, ASOS, Amazon and 900+ brands, and sell through Shopify.</span>
+                    <span class="ledger-meta">JavaScript</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
           </li>
-          <li class="ledger-row" id="knewler">
-            <a class="ledger-item" href="https://knewler.com" target="_blank" rel="noopener">
-              <span class="ledger-index">04</span>
-              <span class="ledger-name">Knewler</span>
-              <span class="ledger-desc">Multi-tenant eLearning platform: universities, companies, and sports clubs launch a branded training environment in minutes.</span>
-              <span class="ledger-meta">TypeScript</span>
-            </a>
+          <li class="ledger-row">
+            <details class="project-folder" id="folder-rannikon">
+              <summary class="ledger-item">
+                <span class="ledger-index"><svg class="folder-icon" width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path fill="currentColor" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h5.2l2 2h9.8A1.5 1.5 0 0 1 21 5.5v9a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 1 14.5z"/></svg></span>
+                <span class="ledger-name">Rannikon</span>
+                <span class="ledger-desc">Timesheet platform for Rannikon Puutarha: the web app, its mobile companion, and a new website.</span>
+                <span class="ledger-meta">3 projects</span>
+              </summary>
+              <ul class="folder-items">
+                <li class="ledger-row" id="rannikon">
+                  <div class="ledger-item">
+                    <span class="ledger-index">Web app</span>
+                    <a class="ledger-name" href="https://rannikon.com" target="_blank" rel="noopener">Rannikon</a>
+                    <span class="ledger-desc">Farm worker timesheet platform for Rannikon Puutarha: hours, pay-rate summaries, and exports to PDF or Excel. <a href="/case-studies/rannikon/">Read the case study</a>.</span>
+                    <span class="ledger-meta">Next.js · Fastify · PostgreSQL</span>
+                  </div>
+                </li>
+                <li class="ledger-row" id="rannikon-mobile">
+                  <a class="ledger-item" href="https://github.com/victorabuchi/rannikon-mobile" target="_blank" rel="noopener">
+                    <span class="ledger-index">Mobile app</span>
+                    <span class="ledger-name">Rannikon Mobile</span>
+                    <span class="ledger-desc">Mobile companion to the Rannikon Puutarha timesheet platform.</span>
+                    <span class="ledger-meta">JavaScript</span>
+                  </a>
+                </li>
+                <li class="ledger-row" id="rannikon-site">
+                  <div class="ledger-item">
+                    <span class="ledger-index">Website</span>
+                    <span class="ledger-name">Rannikon Site</span>
+                    <span class="ledger-desc">A modern new website for Rannikon Puutarha, rebuilt in Next.js to replace the old WordPress site.</span>
+                    <span class="ledger-meta">Coming soon</span>
+                  </div>
+                </li>
+              </ul>
+            </details>
           </li>
-          <li class="ledger-row" id="siteclift">
-            <a class="ledger-item" href="https://github.com/victorabuchi/siteclift" target="_blank" rel="noopener">
-              <span class="ledger-index">05</span>
-              <span class="ledger-name">Siteclift</span>
-              <span class="ledger-desc">A theme marketplace and hosted website builder. Get a new site, or switch an existing one to a new theme, in one click.</span>
-              <span class="ledger-meta">TypeScript</span>
-            </a>
+          <li class="ledger-row">
+            <details class="project-folder" id="folder-shopify">
+              <summary class="ledger-item">
+                <span class="ledger-index"><svg class="folder-icon" width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path fill="currentColor" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h5.2l2 2h9.8A1.5 1.5 0 0 1 21 5.5v9a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 1 14.5z"/></svg></span>
+                <span class="ledger-name">Shopify</span>
+                <span class="ledger-desc">Shopify apps and themes.</span>
+                <span class="ledger-meta">2 folders</span>
+              </summary>
+              <ul class="folder-items">
+                <li class="ledger-row">
+                  <details class="project-folder" id="folder-shopify-apps">
+                    <summary class="ledger-item">
+                      <span class="ledger-index"><svg class="folder-icon" width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path fill="currentColor" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h5.2l2 2h9.8A1.5 1.5 0 0 1 21 5.5v9a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 1 14.5z"/></svg></span>
+                      <span class="ledger-name">Shopify Apps</span>
+                      <span class="ledger-desc">Embedded apps for Shopify stores.</span>
+                      <span class="ledger-meta">1 project</span>
+                    </summary>
+                    <ul class="folder-items">
+                      <li class="ledger-row" id="onshipy-shopify-app">
+                        <a class="ledger-item" href="https://github.com/victorabuchi/onshipy-shopify-app" target="_blank" rel="noopener">
+                          <span class="ledger-index">Shopify app</span>
+                          <span class="ledger-name">Onshipy Shopify App</span>
+                          <span class="ledger-desc">Embedded Shopify app for Onshipy, built with Next.js, Shopify Polaris and App Bridge, connecting the dropshipping platform to a merchant's Shopify store.</span>
+                          <span class="ledger-meta">JavaScript</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="ledger-row">
+                  <details class="project-folder" id="folder-shopify-themes">
+                    <summary class="ledger-item">
+                      <span class="ledger-index"><svg class="folder-icon" width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path fill="currentColor" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h5.2l2 2h9.8A1.5 1.5 0 0 1 21 5.5v9a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 1 14.5z"/></svg></span>
+                      <span class="ledger-name">Shopify Themes</span>
+                      <span class="ledger-desc">Custom Online Store 2.0 themes.</span>
+                      <span class="ledger-meta">1 project</span>
+                    </summary>
+                    <ul class="folder-items">
+                      <li class="ledger-row" id="blanc">
+                        <a class="ledger-item" href="https://github.com/victorabuchi/blanc" target="_blank" rel="noopener">
+                          <span class="ledger-index">Shopify theme</span>
+                          <span class="ledger-name">Blanc</span>
+                          <span class="ledger-desc">A custom Shopify Online Store 2.0 theme for fashion and label-style stores: black-on-white type, edge-to-edge product grids, and brand pages for new arrivals, combos, collabs, and archive.</span>
+                          <span class="ledger-meta">Liquid</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
           </li>
-          <li class="ledger-row" id="nextdoorjobs">
-            <a class="ledger-item" href="https://nextdoorjobs.ca" target="_blank" rel="noopener">
-              <span class="ledger-index">06</span>
-              <span class="ledger-name">Nextdoorjobs</span>
-              <span class="ledger-desc">Software connecting workers and homeowners, built to make local job search easier.</span>
-              <span class="ledger-meta">JavaScript</span>
-            </a>
-          </li>
-          <li class="ledger-row" id="swifrly">
-            <a class="ledger-item" href="https://github.com/victorabuchi/Swifrly" target="_blank" rel="noopener">
-              <span class="ledger-index">07</span>
-              <span class="ledger-name">Swifrly</span>
-              <span class="ledger-desc">A financial layer connecting crypto to the real world: trading, conversion, payments, and card spending in one app.</span>
-              <span class="ledger-meta">TypeScript</span>
-            </a>
-          </li>
-          <li class="ledger-row" id="avantday">
-            <a class="ledger-item" href="https://github.com/victorabuchi/avantday" target="_blank" rel="noopener">
-              <span class="ledger-index">08</span>
-              <span class="ledger-name">Avantday</span>
-              <span class="ledger-desc">Open-source alternative to Notion. Own your data and your customizations.</span>
-              <span class="ledger-meta">Dart</span>
-            </a>
+          <li class="ledger-row">
+            <details class="project-folder" id="folder-swifrly">
+              <summary class="ledger-item">
+                <span class="ledger-index"><svg class="folder-icon" width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path fill="currentColor" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h5.2l2 2h9.8A1.5 1.5 0 0 1 21 5.5v9a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 1 14.5z"/></svg></span>
+                <span class="ledger-name">Swifrly</span>
+                <span class="ledger-desc">The financial layer connecting crypto to the real world.</span>
+                <span class="ledger-meta">1 project</span>
+              </summary>
+              <ul class="folder-items">
+                <li class="ledger-row" id="swifrly">
+                  <a class="ledger-item" href="https://github.com/victorabuchi/Swifrly" target="_blank" rel="noopener">
+                    <span class="ledger-index">App</span>
+                    <span class="ledger-name">Swifrly</span>
+                    <span class="ledger-desc">A financial layer connecting crypto to the real world: trading, conversion, payments, and card spending in one app.</span>
+                    <span class="ledger-meta">TypeScript</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
           </li>
         </ul>
       </div>
@@ -102,48 +221,94 @@
 
   <footer>
     <div class="site-footer-inner">
-      <div class="site-footer-top">
-        <div class="site-footer-intro">
-          <span class="site-footer-heading">Get in Touch</span>
-          <p class="site-footer-text">Brand partnerships, freelance projects, or just to talk shop.</p>
-          <a href="mailto:contact@victorabuchi.com" class="site-footer-email">contact@victorabuchi.com</a>
+      <div class="site-footer-columns">
+        <div class="site-footer-col">
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Work</span>
+            <ul class="site-footer-list">
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/case-studies/">Case Studies</a></li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/process/">Process</a></li>
+            </ul>
+          </div>
         </div>
         <div class="site-footer-col">
-          <span class="site-footer-heading">Work</span>
-          <ul class="site-footer-list">
-            <li><a href="/projects/">Projects</a></li>
-            <li><a href="/case-studies/">Case Studies</a></li>
-            <li><a href="/services/">Services</a></li>
-            <li><a href="/process/">Process</a></li>
-          </ul>
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Profile</span>
+            <ul class="site-footer-list">
+              <li><a href="/about/">About</a></li>
+              <li><a href="/skills/">Skills</a></li>
+              <li><a href="/resume/">Resume</a></li>
+              <li><a href="/testimonials/">Testimonials</a></li>
+            </ul>
+          </div>
         </div>
         <div class="site-footer-col">
-          <span class="site-footer-heading">About</span>
-          <ul class="site-footer-list">
-            <li><a href="/about/">About</a></li>
-            <li><a href="/skills/">Skills</a></li>
-            <li><a href="/resume/">Resume</a></li>
-          </ul>
+          <div class="site-footer-group">
+            <span class="site-footer-heading">More</span>
+            <ul class="site-footer-list">
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </div>
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Get in Touch</span>
+            <ul class="site-footer-list">
+              <li><a href="mailto:contact@victorabuchi.com">contact@victorabuchi.com</a></li>
+            </ul>
+          </div>
         </div>
         <div class="site-footer-col">
-          <span class="site-footer-heading">More</span>
-          <ul class="site-footer-list">
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/testimonials/">Testimonials</a></li>
-            <li><a href="/contact/">Contact</a></li>
-          </ul>
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Featured Projects</span>
+            <ul class="site-footer-list">
+              <li><a href="/projects/#onshipy">Onshipy</a></li>
+              <li><a href="/projects/#swifrly">Swifrly</a></li>
+              <li><a href="/case-studies/rannikon/">Rannikon</a></li>
+            </ul>
+          </div>
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Elsewhere</span>
+            <ul class="site-footer-list">
+              <li><a href="https://github.com/victorabuchi" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/victor-abuchi-06b086338" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="site-footer-bottom">
-        <span class="site-footer-copy">&copy; 2026 Victor Abuchi Oy</span>
-        <ul class="site-footer-social">
-          <li><a href="https://github.com/victorabuchi" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/victor-abuchi-06b086338" target="_blank" rel="noopener">LinkedIn</a></li>
+
+      <div class="site-footer-meta">
+        <ul class="site-footer-notes">
+          <li>Read the <a href="/blog/">latest posts</a>.</li>
+          <li>See the <a href="/resume/">resume</a>.</li>
+          <li>Follow me on <a href="https://github.com/victorabuchi" target="_blank" rel="noopener">GitHub</a> and <a href="https://www.linkedin.com/in/victor-abuchi-06b086338" target="_blank" rel="noopener">LinkedIn</a>.</li>
         </ul>
+        <div class="theme-switcher" role="radiogroup" aria-label="Color theme">
+          <button type="button" role="radio" aria-checked="false" data-theme-choice="light">Light</button>
+          <button type="button" role="radio" aria-checked="false" data-theme-choice="dark">Dark</button>
+          <button type="button" role="radio" aria-checked="true" data-theme-choice="auto">Auto</button>
+        </div>
+      </div>
+
+      <div class="site-footer-legal">
+        <span class="site-footer-copy">Copyright &copy; 2026 Victor Abuchi Oy. All rights reserved.</span>
+        <ul class="site-footer-legal-links">
+          <li><a href="/resume/">Resume</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+        <label class="language-select">
+          <span class="visually-hidden">Language</span>
+          <select aria-label="Language">
+            <option value="en" selected>English</option>
+            <option value="fi">Suomi</option>
+          </select>
+        </label>
       </div>
     </div>
   </footer>
 
-  <script src="/js/main.js"></script>
+  <script src="/js/i18n.js?v=7"></script>
+  <script src="/js/main.js?v=7"></script>
 </body>
 </html>

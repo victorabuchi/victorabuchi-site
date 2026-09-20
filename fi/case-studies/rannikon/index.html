@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rannikon: Työvoiman hallintajärjestelmä marjatilalle | Victor Abuchi</title>
+  <link rel="alternate" hreflang="en" href="https://victorabuchi.com/case-studies/rannikon/">
+  <link rel="alternate" hreflang="fi" href="https://victorabuchi.com/fi/case-studies/rannikon/">
+  <link rel="alternate" hreflang="x-default" href="https://victorabuchi.com/case-studies/rannikon/">
+  <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="/css/style.css?v=7">
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav">
+      <a href="/fi/" class="site-nav-name">Victor Abuchi</a>
+      <ul class="site-nav-links">
+        <li><a href="/fi/about/">Minusta</a></li>
+        <li><a href="/fi/case-studies/" aria-current="page">Case-esimerkit</a></li>
+        <li><a href="/fi/projects/">Projektit</a></li>
+        <li><a href="/fi/services/">Palvelut</a></li>
+        <li><a href="/fi/process/">Prosessi</a></li>
+        <li><a href="/fi/skills/">Taidot</a></li>
+        <li><a href="/fi/resume/">CV</a></li>
+        <li><a href="/fi/testimonials/">Suositukset</a></li>
+        <li><a href="/fi/blog/">Blogi</a></li>
+        <li><a href="/fi/contact/">Yhteystiedot</a></li>
+      </ul>
+      <button type="button" class="site-nav-search" aria-label="Haku" aria-haspopup="dialog">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 10l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <article class="case-study">
+      <a href="/fi/projects/" class="case-study-back">Takaisin projekteihin</a>
+
+      <div class="case-study-header">
+        <h1 class="case-study-title">Rannikon: täyden pinon marjatilan työaikajärjestelmän rakentaminen tyhjästä</h1>
+        <p class="case-study-subtitle">Näin suunnittelin, rakensin ja julkaisin kokonaisen työvoiman hallintajärjestelmän Rannikon Puutarhan marjatilalle Suomessa. Se palvelee yli 300 kausityöntekijää kuudessa majoitusryhmässä viidellä kielellä.</p>
+      </div>
+
+      <div class="case-study-body">
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">01 &middot; Yleiskatsaus</h2>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/hero.png" alt="Rannikon Puutarhan etusivun yläosa">
+            <figcaption class="case-study-caption">Rannikon Puutarhan etusivu</figcaption>
+          </figure>
+
+          <p>Rannikon Puutarha on yksi Suomen suurimmista marjatiloista, ja se sijaitsee Halikossa Lounais-Suomessa. Joka kausi tila työllistää yli 300 kausityöntekijää Ukrainasta, Kambodžasta, Vietnamista, Nepalista ja muualta, ja jokaisen tulee seurata päivittäisiä työtuntejaan neljällä virallisella palkanlaskennan paperilomakkeella: valkoisella lomakkeella, oranssilla lomakkeella, viikkoyhteenvedolla ja vihreällä lomakkeella.</p>
+
+          <p>Ennen Rannikonia jokainen työntekijä täytti lomakkeet käsin. Kaikki laskutoimitukset tehtiin manuaalisesti. Työnjohtajat kirjasivat saapumisajat vihkoihin. Palkanlaskennan henkilöstö käytti päiväkausia satojen paperilomakkeiden tarkistamiseen kunkin kuukauden lopussa. Virheitä sattui usein. Riitoja tunneista syntyi säännöllisesti.</p>
+
+          <p>Rakensin Rannikonin ratkaisemaan kaiken tämän.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">02 &middot; Haaste</h2>
+
+          <p>Tilalla ei ollut digitaalista järjestelmää työtuntien seurantaan. Aiempi prosessi:</p>
+
+          <ul>
+            <li>Työntekijät saapuivat tilalle, ja työnjohtajat kirjasivat heidän työnumeronsa ja aloitusaikansa vihkoihin</li>
+            <li>Työntekijät laskivat omat tuntinsa käsin neljälle eri paperilomakkeelle</li>
+            <li>Laskuvirheitä sattui usein: valkoisen lomakkeen, oranssin lomakkeen ja viikkoyhteenvedon kaava on monimutkainen</li>
+            <li>Työnjohtajat lähettivät käsinkirjoitetut päivälokit majoitusvastaaville Facebook-ryhmien kautta</li>
+            <li>Majoitusvastaavat lajittelivat lokit käsin majoitusryhmittäin ja välittivät ne palkanlaskentaan</li>
+            <li>Palkanlaskenta sai kuukausittain satoja paperilomakkeita, joita ei voinut tarkistaa alkuperäisiä työnjohtajien merkintöjä vasten</li>
+          </ul>
+
+          <p>Tilanjohtaja Lina Rannikolla ei ollut digitaalista näkymää päivittäiseen toimintaan. Palkanlaskentatiimillä, jota johtivat Aleksi ja Johanna, ei ollut automaattista tarkistusjärjestelmää.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">03 &middot; Ratkaisu</h2>
+
+          <p>Lähestyin Lina Rannikkoa suoraan ja ehdotin kokonaisen digitaalisen työvoiman hallintajärjestelmän rakentamista. Hän hyväksyi projektin, ja rakensin koko järjestelmän yksin usean kuukauden aikana.</p>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/dashboard.png" alt="Rannikonin työntekijän kojelaudan yleisnäkymä">
+            <figcaption class="case-study-caption">Kojelaudan yleisnäkymä</figcaption>
+          </figure>
+
+          <p>Rannikon on täyden pinon SaaS-sovellus, johon kuuluu:</p>
+
+          <ul>
+            <li>Verkkosovellus osoitteessa <code>rannikon.com</code></li>
+            <li>Natiivi Android-mobiilisovellus Google Play -kaupassa</li>
+            <li>Fastify-REST-rajapinta osoitteessa <code>api.rannikon.com</code></li>
+            <li>PostgreSQL-tietokanta Supabasen EU-alueella</li>
+            <li>Julkaistu Renderissä automaattisella julkaisulla GitHubista</li>
+          </ul>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">04 &middot; Laskentamoottori</h2>
+
+          <p>Järjestelmän ydin on automaattinen tuntilaskentamoottori. Työntekijät syöttävät kolme arvoa: todellisen aloitusajan, todellisen lopetusajan ja taukojen kokonaiskeston. Moottori laskee automaattisesti:</p>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/dashboarddaysview.png" alt="Päivänäkymä tuntimerkeillä">
+            <figcaption class="case-study-caption">Päivänäkymä tuntimerkeillä</figcaption>
+          </figure>
+
+          <h3 class="case-study-subhead">Valkoinen lomake: tuntipalkalla maksettava työ</h3>
+          <ul>
+            <li>Valkoinen alku = todellinen aloitusaika</li>
+            <li>Valkoinen loppu = todellinen alku + 8 tuntia + ruokatauko (30 min, jos tauko on vähintään 30 min)</li>
+            <li>Valkoiset tunnit = aina 8:00 (tai vähemmän, jos työntekijä lopetti aiemmin)</li>
+            <li>Ylimääräiset tauot = taukojen kokonaisaika miinus 30 minuutin ruokatauko</li>
+          </ul>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/whitepaper.png" alt="Valkoisen lomakkeen työaikanäkymä">
+            <figcaption class="case-study-caption">Valkoinen lomake</figcaption>
+          </figure>
+
+          <h3 class="case-study-subhead">Oranssi lomake: tuntipalkalla maksettava lisätyö</h3>
+          <ul>
+            <li>Oranssi alku = valkoinen loppu</li>
+            <li>Oranssi loppu = todellinen lopetusaika</li>
+            <li>Oranssi tauko = sama kuin ylimääräinen tauko valkoisella lomakkeella</li>
+            <li>Oranssit tunnit = oranssi loppu miinus oranssi alku miinus oranssi tauko</li>
+          </ul>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/orangepaper.png" alt="Oranssin lomakkeen työaikanäkymä">
+            <figcaption class="case-study-caption">Oranssi lomake</figcaption>
+          </figure>
+
+          <h3 class="case-study-subhead">Viikkoyhteenveto: muodostuu automaattisesti kaikista merkinnöistä</h3>
+          <ul>
+            <li>Työtuntirivi (enintään 8 päivässä)</li>
+            <li>Lisätuntirivi (enintään 3 päivässä maanantaista perjantaihin, enintään 11 lauantaina)</li>
+            <li>Marjanpoiminnan kilorivi</li>
+            <li>Tunnit yhteensä päivässä ja viikossa</li>
+          </ul>
+
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/weeklysummary.png" alt="Viikkoyhteenvetonäkymä">
+            <figcaption class="case-study-caption">Viikkoyhteenveto, muodostuu automaattisesti päivämerkinnöistä</figcaption>
+          </figure>
+
+          <h3 class="case-study-subhead">Vihreä lomake: marjanpoiminta, palkka maksetaan kilojen mukaan</h3>
+          <ul>
+            <li>Erillään peltotyön merkinnöistä</li>
+            <li>Työntekijät syöttävät aloitusajan, lopetusajan, poimitut kilot ja mitä poimittiin</li>
+            <li>Ei laskentaa: näyttää täsmälleen sen, mitä työntekijä syötti</li>
+            <li>Ruokataukosarake näyttää aina 1 tunnin</li>
+          </ul>
+
+          <p>Tämä laskentamoottori toimii kokonaan taustajärjestelmässä (Fastify), joten kaikki työntekijät näkevät saman tarkan tuloksen laitteesta tai selaimesta riippumatta.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">05 &middot; Roolijärjestelmä</h2>
+
+          <p>Rannikonissa on 6 käyttäjäroolia, joilla kullakin on oma sivunsa ja omat oikeutensa:</p>
+
+          <h3 class="case-study-subhead">Työntekijä</h3>
+          <ul>
+            <li>Kirjaa päivittäiset tunnit</li>
+            <li>Katsoo ja lataa kaikki 4 lomaketta PDF- tai Excel-muodossa</li>
+            <li>Muokkaa mitä tahansa solua suoraan lomakkeilla</li>
+            <li>Lähettää kuukausilomakkeet palkanlaskentaan</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Työnjohtaja</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/supervisors.png" alt="Työnjohtajan ryhmäkirjaussivu">
+            <figcaption class="case-study-caption">Työnjohtajan ryhmäkirjaussivu</figcaption>
+          </figure>
+          <ul>
+            <li>Kirjaa työntekijäryhmät tilalla (useita työntekijöitä, yksi aloitusaika)</li>
+            <li>Kirjaa tauot päivän mittaan (järjestelmä laskee kokonaisajan)</li>
+            <li>Asettaa lopetusajan ryhmälle: täyttää kaikkien työntekijöiden työaikakirjaukset automaattisesti</li>
+            <li>Lähettää päivittäisen työlokin ylläpitäjälle sähköpostitse</li>
+            <li>Vie päivän työlokin PDF- ja Excel-muotoon</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Majoitusvastaava</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/housemaster.png" alt="Majoitusvastaavan päivittäinen työlokisivu">
+            <figcaption class="case-study-caption">Majoitusvastaavan päivittäinen työlokisivu</figcaption>
+          </figure>
+          <ul>
+            <li>Saa ylläpitäjältä päivittäiset työlokit lajiteltuina oman majoitusryhmänsä mukaan</li>
+            <li>Lataa PDF-, Excel- tai kuvamuodossa</li>
+            <li>Jakaa Facebook-ryhmään tai WhatsAppiin</li>
+            <li>
+              Työntekijät lajitellaan automaattisesti työnumeron mukaan 6 majoitusryhmään:
+              <ul>
+                <li><code>100&ndash;199</code>: Kivilinna / Salo</li>
+                <li><code>200&ndash;299</code>: Karton Cambodia</li>
+                <li><code>300&ndash;399</code>: Karton International</li>
+                <li><code>400&ndash;499</code>: Vassila</li>
+                <li><code>500&ndash;599</code>: Suppala</li>
+                <li><code>600+</code>: Salo / Turku</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3 class="case-study-subhead">Ylläpitäjä</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/admin.png" alt="Ylläpitopaneeli, jossa koko työntekijäluettelo">
+            <figcaption class="case-study-caption">Ylläpitopaneeli: koko työntekijäluettelo</figcaption>
+          </figure>
+          <ul>
+            <li>Näkee kaikki yli 300 työntekijää</li>
+            <li>Saa kaikki työnjohtajien päivälokit</li>
+            <li>Lajittelee työlokit automaattisesti majoitusryhmän ja työnumeron mukaan</li>
+            <li>Lähettää kunkin ryhmän työlokin oikealle majoitusvastaavalle</li>
+            <li>Lähettää samanaikaisesti palkanlaskentaan tarkistettavaksi</li>
+            <li>Kutsuu uudet käyttäjät sähköpostilla ja määrittää roolin</li>
+            <li>Hallinnoi kaikkia rooleja: työntekijä, työnjohtaja, majoitusvastaava, palkanlaskenta, ylläpitäjä</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Palkanlaskenta</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/payroll.png" alt="Palkanlaskennan tarkistussivu, jossa verrataan työnjohtajan ja työntekijän tunteja">
+            <figcaption class="case-study-caption">Palkanlaskennan tarkistus: työnjohtajan ja työntekijän tunnit</figcaption>
+          </figure>
+          <ul>
+            <li>Saa ylläpitäjältä työnjohtajien päivittäiset työlokit tarkistettavaksi</li>
+            <li>Saa työntekijöiden kuukausilomakkeet</li>
+            <li>Älykäs tarkistusjärjestelmä vertaa työnjohtajan kirjaamia tunteja työntekijän lähettämiin tunteihin</li>
+            <li>Näyttää päiväkohtaisesti täsmää, poikkeaa, puuttuu työntekijältä, puuttuu työnjohtajalta</li>
+            <li>Hyväksyy, hylkää tai merkitsee tarkistusta tarvitsevat lähetykset</li>
+            <li>Vie tarkistusraportit PDF-muodossa</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Työntekijän arkisto: päivittäisten työlokien näkyvyys</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/archive.png" alt="Työntekijän arkisto, jossa työnjohtajien työlokit aikajärjestyksessä">
+            <figcaption class="case-study-caption">Työntekijän arkisto, työlokien historia aikajärjestyksessä</figcaption>
+          </figure>
+          <p>Jokainen työntekijä voi kirjautua sisään ja katsoa arkistosivua, joka on aikajärjestyksessä oleva tallenne kaikista tilalla kirjatuista työnjohtajien työlokeista. Työntekijät tarkistavat sen avulla omat kirjatut tuntinsa ennen kuin lähettävät ne palkanlaskentaan. Työlokit tallennetaan päivämäärän mukaan ja ne ovat kaikkien työntekijöiden nähtävillä majoitusryhmästä riippumatta. Näin jokainen työntekijä näkee täysin läpinäkyvästi, mitä hänen työnjohtajansa on kirjannut pellolla, ja riidat tunneista poistuvat.</p>
+
+          <h3 class="case-study-subhead">Rannikon-näyttötaulu: reaaliaikainen tilan näyttöjärjestelmä</h3>
+          <figure class="case-study-figure">
+            <img class="case-study-image" src="/assets/images/rannikon/board.png" alt="Rannikon-näyttötaulu, joka näyttää reaaliaikaiset työlokit majoitusrakennuksen televisiossa">
+            <figcaption class="case-study-caption">Reaaliaikainen työlokinäyttö majoitusryhmien televisioille</figcaption>
+          </figure>
+          <p>Rannikon Puutarha asentaa televisiot jokaiseen majoitusryhmän rakennukseen. Nämä näytöt synkronoituvat suoraan työnjohtajien kirjausjärjestelmän kanssa reaaliajassa. Kun työnjohtajat kirjaavat työntekijöiden saapumisia, ryhmiä ja lopetusaikoja pellolla, tiedot näkyvät suorana kunkin majoitusrakennuksen televisioruuduilla.</p>
+          <p>Viikonloppuisin viikkotyölokit näytetään majoitusrakennusten televisioissa. Työntekijät voivat kävellä ruudun luo ja nähdä kirjatut tuntinsa, aloitus- ja lopetusaikansa sekä viikon kokonaistuntinsa ilman että heidän tarvitsee avata sovellusta.</p>
+          <p>Tämä ominaisuus poistaa tarpeen, että majoitusvastaavat julkaisevat työlokeja käsin Facebook-ryhmiin joka päivä. Tieto tavoittaa työntekijät automaattisesti heidän asuintiloihinsa asennettujen näyttöjen kautta.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">06 &middot; Tekninen toteutus</h2>
+
+          <ul>
+            <li>Käyttöliittymä: <code>Next.js 16</code>, <code>React</code>, <code>jsPDF</code>, <code>jspdf-autotable</code>, <code>xlsx</code>, DM Sans font</li>
+            <li>Taustajärjestelmä: <code>Fastify 5</code>, <code>PostgreSQL</code>, JWT-tunnistautuminen, Google OAuth</li>
+            <li>Tietokanta: Supabase EU West (Irlanti)</li>
+            <li>Sähköposti: Resend (<code>noreply@rannikon.com</code>)</li>
+            <li>Mobiili: <code>React Native</code> (Expo SDK 54), <code>expo-print</code>, <code>expo-sharing</code>, <code>expo-secure-store</code></li>
+            <li>Hosting: Render (verkkopalvelu + staattinen sivusto)</li>
+            <li>Kielet: englanti, ukraina, khmer (Kambodža), vietnam, nepali</li>
+            <li>Versionhallinta: GitHub (<code>github.com/victorabuchi/rannikon</code>)</li>
+          </ul>
+
+          <h3 class="case-study-subhead">Keskeiset tekniset ratkaisut</h3>
+          <ul>
+            <li>Laskentamoottori toimii kokonaan taustajärjestelmässä: ei päällekkäistä logiikkaa käyttöliittymässä</li>
+            <li>Päivämäärät tallennetaan klo 12 UTC:na, jotta vältetään aikavyöhykkeestä johtuvat yhden päivän virheet Suomessa (UTC+3)</li>
+            <li>JWT-tunnisteet 30 päivän voimassaololla tallennetaan <code>localStorage</code>en</li>
+            <li>CORS määritetty erikseen sallimaan <code>DELETE</code>-metodi</li>
+            <li>Vihreän lomakkeen merkinnät ovat omassa taulussaan (<code>green_paper_entries</code>) erillään peltotyön merkinnöistä (<code>timesheet_entries</code>)</li>
+            <li>Älykäs ajan syötteen jäsennys: hyväksyy muodot <code>10:00</code>, <code>10.00</code>, <code>10,00</code> ja <code>1000</code></li>
+          </ul>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">07 &middot; Vaikutus</h2>
+
+          <ul>
+            <li>Yli 300 aktiivista työntekijää käyttää järjestelmää kuudessa majoitusryhmässä</li>
+            <li>5 kieltä tuettuna: työntekijät käyttävät sovellusta omalla äidinkielellään</li>
+            <li>Ei yhtään manuaalista laskuvirhettä: moottori hoitaa kaiken laskennan automaattisesti</li>
+            <li>Työnjohtajat säästävät tunteja päivittäin: ryhmäkirjaus korvaa käsin täytettävät vihkot</li>
+            <li>Palkanlaskennan tarkistus lyheni päivistä minuutteihin</li>
+            <li>Lina Rannikko (tilanjohtaja) hyväksyi ja suositteli järjestelmää virallisesti</li>
+            <li>Julkaistu Google Play -kaupassa</li>
+            <li>Tilanjohtaja yhdisti Victorin muihin yrityksiin mahdollisia projekteja varten</li>
+          </ul>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">08 &middot; Mitä opin</h2>
+
+          <h3 class="case-study-subhead">1. Puhu ensin oikeille käyttäjille</h3>
+          <p>Laskentakaava muuttui useita kertoja oikeiden tilatyöntekijöiden ja palkanlaskennan henkilöstön palautteen perusteella. Sen saaminen oikeaksi vaati sellaisten fyysisten paperilomakkeiden ymmärtämistä, joita työntekijät olivat käyttäneet vuosia.</p>
+
+          <h3 class="case-study-subhead">2. Pidä laskentalogiikka yhdessä paikassa</h3>
+          <p>Alkuvaiheessa syntyi merkittävä virhe, koska käyttöliittymällä oli oma kopionsa laskentakaavasta, joka erkani taustajärjestelmän kaavasta. Pidä aina yksi totuuden lähde.</p>
+
+          <h3 class="case-study-subhead">3. Rakenna todellista käyttöympäristöä varten</h3>
+          <p>Työntekijät käyttävät sovellusta pelloilla heikon yhteyden varassa, halvoilla Android-puhelimilla ja muilla kielillä kuin englanniksi. Jokaisessa suunnitteluratkaisussa piti huomioida tämä.</p>
+
+          <h3 class="case-study-subhead">4. Aloita yksinkertaisesta, lisää monimutkaisuutta vähitellen</h3>
+          <p>Järjestelmä alkoi yksinkertaisena työaikalaskurina. Työnjohtajien ryhmäkirjaus, palkanlaskennan tarkistus ja marjanpoiminnan vihreä lomake lisättiin kaikki sidosryhmien suorien pyyntöjen perusteella.</p>
+
+          <h3 class="case-study-subhead">5. Henkilökohtaiset suhteet ovat tärkeitä liiketoiminnassa</h3>
+          <p>Projekti eteni, koska tapasin Linan, Aleksin ja Johannan kasvokkain, ei pelkästään sähköposteilla tai viesteillä.</p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="case-study-section-title">09 &middot; Tekniset linkit</h2>
+          <ul class="case-study-links">
+            <li>Käytössä oleva sovellus: <a href="https://www.rannikon.com" target="_blank" rel="noopener">rannikon.com</a></li>
+            <li>GitHub: <a href="https://github.com/victorabuchi/rannikon" target="_blank" rel="noopener">github.com/victorabuchi/rannikon</a></li>
+            <li>Mobiili (GitHub): <a href="https://github.com/victorabuchi/rannikon-mobile" target="_blank" rel="noopener">github.com/victorabuchi/rannikon-mobile</a></li>
+          </ul>
+        </section>
+
+      </div>
+
+      <div class="case-study-cta">
+        <p class="case-study-cta-text">Etsitkö kehittäjää, joka osaa rakentaa oikeita ratkaisuja oikeisiin ongelmiin?</p>
+        <a href="mailto:contact@victorabuchi.com" class="case-study-cta-email">contact@victorabuchi.com</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="site-footer-inner">
+      <div class="site-footer-columns">
+        <div class="site-footer-col">
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Työ</span>
+            <ul class="site-footer-list">
+              <li><a href="/fi/projects/">Projektit</a></li>
+              <li><a href="/fi/case-studies/">Case-esimerkit</a></li>
+              <li><a href="/fi/services/">Palvelut</a></li>
+              <li><a href="/fi/process/">Prosessi</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-col">
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Profiili</span>
+            <ul class="site-footer-list">
+              <li><a href="/fi/about/">Minusta</a></li>
+              <li><a href="/fi/skills/">Taidot</a></li>
+              <li><a href="/fi/resume/">CV</a></li>
+              <li><a href="/fi/testimonials/">Suositukset</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-col">
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Lisää</span>
+            <ul class="site-footer-list">
+              <li><a href="/fi/blog/">Blogi</a></li>
+              <li><a href="/fi/contact/">Yhteystiedot</a></li>
+            </ul>
+          </div>
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Ota yhteyttä</span>
+            <ul class="site-footer-list">
+              <li><a href="mailto:contact@victorabuchi.com">contact@victorabuchi.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-col">
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Esittelyssä</span>
+            <ul class="site-footer-list">
+              <li><a href="/fi/projects/#onshipy">Onshipy</a></li>
+              <li><a href="/fi/projects/#swifrly">Swifrly</a></li>
+              <li><a href="/fi/case-studies/rannikon/">Rannikon</a></li>
+            </ul>
+          </div>
+          <div class="site-footer-group">
+            <span class="site-footer-heading">Muualla</span>
+            <ul class="site-footer-list">
+              <li><a href="https://github.com/victorabuchi" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/victor-abuchi-06b086338" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer-meta">
+        <ul class="site-footer-notes">
+          <li>Lue <a href="/fi/blog/">uusimmat kirjoitukset</a>.</li>
+          <li>Katso <a href="/fi/resume/">CV</a>.</li>
+          <li>Seuraa minua: <a href="https://github.com/victorabuchi" target="_blank" rel="noopener">GitHub</a> ja <a href="https://www.linkedin.com/in/victor-abuchi-06b086338" target="_blank" rel="noopener">LinkedIn</a>.</li>
+        </ul>
+        <div class="theme-switcher" role="radiogroup" aria-label="Väriteema">
+          <button type="button" role="radio" aria-checked="false" data-theme-choice="light">Vaalea</button>
+          <button type="button" role="radio" aria-checked="false" data-theme-choice="dark">Tumma</button>
+          <button type="button" role="radio" aria-checked="true" data-theme-choice="auto">Auto</button>
+        </div>
+      </div>
+
+      <div class="site-footer-legal">
+        <span class="site-footer-copy">Copyright &copy; 2026 Victor Abuchi Oy. Kaikki oikeudet pidätetään.</span>
+        <ul class="site-footer-legal-links">
+          <li><a href="/fi/resume/">CV</a></li>
+          <li><a href="/fi/contact/">Yhteystiedot</a></li>
+        </ul>
+        <label class="language-select">
+          <span class="visually-hidden">Kieli</span>
+          <select aria-label="Kieli">
+            <option value="en">English</option>
+            <option value="fi" selected>Suomi</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/i18n.js?v=7"></script>
+  <script src="/js/main.js?v=7"></script>
+</body>
+</html>
