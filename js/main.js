@@ -404,14 +404,27 @@ function initReveal() {
       // drop the stagger delay afterwards so hover effects stay snappy
       window.setTimeout(() => { el.style.transitionDelay = ''; }, 1200);
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 
   items.forEach((el) => {
+    // A block taller than the screen can never be "mostly visible", so never hide it.
+    if (el.getBoundingClientRect().height > window.innerHeight * 0.9) {
+      el.classList.add('is-visible');
+      return;
+    }
     const siblings = el.parentElement ? Array.from(el.parentElement.children).filter((c) => c.classList.contains('reveal')) : [];
     const index = siblings.indexOf(el);
     if (index > 0) el.style.transitionDelay = `${Math.min(index, 6) * 70}ms`;
     observer.observe(el);
   });
+
+  // Safety net: whatever is still hidden after a moment and is on screen gets shown.
+  window.setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-visible');
+    });
+  }, 2500);
 }
 
 // Cycle the words in "I build ..." in the hero, each with its own logo.
