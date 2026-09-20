@@ -2983,6 +2983,15 @@ span.example-ref {
   cursor: pointer;
 }
 
+.rs-badges {
+  margin: 1.5rem 0 0;
+}
+
+.rs-badges .chip:hover {
+  color: var(--color-ink);
+  background: var(--color-tile);
+}
+
 .rs-contact-line {
   display: flex;
   flex-wrap: wrap;
@@ -3390,6 +3399,8 @@ span.example-ref {
   .rs-subnav,
   .rs-actions,
   .rs-print,
+  .rs-badges,
+  .screen-only,
   #rs-projects,
   #rs-contact .sv-actions,
   .site-search,

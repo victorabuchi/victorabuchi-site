@@ -1,0 +1,2 @@
+# Local only: the street address used when generating the résumé PDFs (see make_pdf.sh)
+.pdf-address
