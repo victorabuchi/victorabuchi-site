@@ -669,6 +669,44 @@ function initSkills() {
 }
 
 /* -------------------------------------------------------- */
+/* Résumé                                                      */
+/* -------------------------------------------------------- */
+
+// Sticky section menu that highlights where you are, and the Print button.
+function initResume() {
+  const nav = document.querySelector('.rs-subnav');
+  const printButtons = document.querySelectorAll('[data-print]');
+  printButtons.forEach((b) => b.addEventListener('click', () => window.print()));
+  if (!nav) return;
+
+  // the section menu sticks just under the (taller on phones) site header
+  const header = document.querySelector('header');
+  const setHeaderHeight = () => {
+    if (header) document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+  };
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+
+  const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  const sections = links.map((a) => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+  if (!('IntersectionObserver' in window) || !sections.length) return;
+
+  const mark = (id) => {
+    links.forEach((a) => {
+      const on = a.getAttribute('href') === `#${id}`;
+      a.toggleAttribute('aria-current', on);
+      if (on) a.setAttribute('aria-current', 'true');
+      if (on && nav.scrollWidth > nav.clientWidth) a.scrollIntoView({ inline: 'center', block: 'nearest' });
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => { if (entry.isIntersecting) mark(entry.target.id); });
+  }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
+  sections.forEach((s) => observer.observe(s));
+}
+
+/* -------------------------------------------------------- */
 /* Project folders: open the folder holding a #hash target     */
 /* -------------------------------------------------------- */
 
@@ -698,6 +736,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initShowcase();
   initScrub();
   initSkills();
+  initResume();
   initOrbit();
   initProjectFolders();
   initThemeSwitcher();
