@@ -1397,6 +1397,25 @@ html[lang="fi"] .hero-name {
   to { transform: translateX(-100%); }
 }
 
+.tile-kicker {
+  position: relative;
+  margin: 0 0 0.6rem;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+  color: hsl(var(--accent) 80% 58%);
+}
+
+.way-step-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.way-step-title a:hover {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
 /* --- Two ways to start --- */
 
 .ways {
