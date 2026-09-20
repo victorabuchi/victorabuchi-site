@@ -8,7 +8,7 @@
   <link rel="alternate" hreflang="fi" href="https://victorabuchi.com/fi/about/">
   <link rel="alternate" hreflang="x-default" href="https://victorabuchi.com/about/">
   <script>(function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}if(!t){var m=document.cookie.match(/(?:^|; )theme=(light|dark)/);t=m&&m[1]}if(t==='light'||t==='dark')document.documentElement.dataset.theme=t})()</script>
-  <link rel="stylesheet" href="/css/style.css?v=19">
+  <link rel="stylesheet" href="/css/style.css?v=22">
 </head>
 <body>
 
@@ -34,29 +34,219 @@
   </header>
 
   <main>
-    <section id="about">
-      <div class="about-inner">
-        <div class="about-rows">
-          <div class="about-row">
-            <span class="section-label">About</span>
-            <p class="about-text">Second-year Bachelor's student at the University of Eastern Finland. I develop web services, Android and iOS mobile apps, Shopify apps, Shopify themes, and custom websites.</p>
+    <section class="ab-hero" id="ab-hero">
+      <div class="ab-hero-grid">
+        <div class="ab-hero-text">
+          <p class="section-eyebrow">About</p>
+          <h1 class="ab-title">Hi, I’m <span class="ab-gradient">Victor.</span></h1>
+          <p class="ab-lede">Software developer and Computer Science student, building things people depend on.</p>
+          <ul class="ab-chips">
+            <li class="chip">University of Eastern Finland</li>
+            <li class="chip">Student Ambassador</li>
+            <li class="chip chip-live"><span class="hero-badge-dot" aria-hidden="true"></span>Open to freelance projects</li>
+          </ul>
+        </div>
+        <div class="orbit" aria-hidden="false">
+          <span class="orbit-core" aria-label="Victor Abuchi">VA</span>
+            <span class="orbit-logo" style="--x: 50.0%; --y: 9.0%; --d: 6; --delay: 0.0s">
+              <img src="/assets/images/ios.jpg" alt="iOS" width="64" height="64">
+            </span>
+            <span class="orbit-logo" style="--x: 85.5%; --y: 29.5%; --d: 10; --delay: -0.9s">
+              <img src="/assets/images/shopify-logo.png" alt="Shopify" width="64" height="64">
+            </span>
+            <span class="orbit-logo" style="--x: 85.5%; --y: 70.5%; --d: 14; --delay: -1.8s">
+              <img src="/assets/images/logos/nextjs.svg" alt="Next.js" width="64" height="64">
+            </span>
+            <span class="orbit-logo" style="--x: 50.0%; --y: 91.0%; --d: 6; --delay: -2.7s">
+              <img src="/assets/images/android.jpg" alt="Android" width="64" height="64">
+            </span>
+            <span class="orbit-logo" style="--x: 14.5%; --y: 70.5%; --d: 10; --delay: -3.6s">
+              <img src="/assets/images/logos/html5.svg" alt="HTML5" width="64" height="64">
+            </span>
+            <span class="orbit-logo" style="--x: 14.5%; --y: 29.5%; --d: 14; --delay: -4.5s">
+              <img src="/assets/images/logos/typescript.svg" alt="TypeScript" width="64" height="64">
+            </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab-scrub" id="ab-statement">
+      <p data-scrub aria-label="I’m a second-year Computer Science student at the University of Eastern Finland. I build web services, Android and iOS apps, Shopify apps and themes, and custom websites. Never from a template. Always from scratch, for real people with real deadlines."><span class="scrub-word">I’m</span> <span class="scrub-word">a</span> <span class="scrub-word">second-year</span> <span class="scrub-word">Computer</span> <span class="scrub-word">Science</span> <span class="scrub-word">student</span> <span class="scrub-word">at</span> <span class="scrub-word">the</span> <span class="scrub-word">University</span> <span class="scrub-word">of</span> <span class="scrub-word">Eastern</span> <span class="scrub-word">Finland.</span> <span class="scrub-word">I</span> <span class="scrub-word">build</span> <span class="scrub-word">web</span> <span class="scrub-word">services,</span> <span class="scrub-word">Android</span> <span class="scrub-word">and</span> <span class="scrub-word">iOS</span> <span class="scrub-word">apps,</span> <span class="scrub-word">Shopify</span> <span class="scrub-word">apps</span> <span class="scrub-word">and</span> <span class="scrub-word">themes,</span> <span class="scrub-word">and</span> <span class="scrub-word">custom</span> <span class="scrub-word">websites.</span> <span class="scrub-word">Never</span> <span class="scrub-word">from</span> <span class="scrub-word">a</span> <span class="scrub-word">template.</span> <span class="scrub-word">Always</span> <span class="scrub-word">from</span> <span class="scrub-word">scratch,</span> <span class="scrub-word">for</span> <span class="scrub-word">real</span> <span class="scrub-word">people</span> <span class="scrub-word">with</span> <span class="scrub-word">real</span> <span class="scrub-word">deadlines.</span></p>
+    </section>
+
+    <section class="home-section" id="ab-glance">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">At a glance</p>
+        <h2 class="section-title">The short version.</h2>
+      </div>
+      <div class="bento">
+        <article class="bento-tile bento-tall reveal">
+          <p class="bento-eyebrow">What I build</p>
+          <h3 class="bento-title">Web, mobile, and Shopify. End to end.</h3>
+          <p class="bento-text">I develop web services, Android and iOS mobile apps, Shopify apps, Shopify themes, and custom websites.</p>
+          <ul class="build-list">
+            <li class="build-item"><span class="tile-logos"><img class="tile-logo" src="/assets/images/logos/nextjs.svg" alt="Next.js" width="56" height="56"></span><span class="build-copy"><strong>Web services</strong><span>Multi-tenant platforms, SaaS, full-stack apps</span></span></li>
+            <li class="build-item"><span class="tile-logos"><img class="tile-logo" src="/assets/images/ios.jpg" alt="iOS" width="56" height="56"><img class="tile-logo" src="/assets/images/android.jpg" alt="Android" width="56" height="56"></span><span class="build-copy"><strong>Mobile apps</strong><span>Android and iOS with React Native and Expo</span></span></li>
+            <li class="build-item"><span class="tile-logos"><img class="tile-logo" src="/assets/images/shopify-logo.png" alt="Shopify" width="56" height="56"></span><span class="build-copy"><strong>Shopify apps</strong><span>Custom embedded apps beyond off-the-shelf</span></span></li>
+            <li class="build-item"><span class="tile-logos"><img class="tile-logo" src="/assets/images/shopify-logo.png" alt="Shopify" width="56" height="56"></span><span class="build-copy"><strong>Shopify themes</strong><span>Online Store 2.0 themes built in Liquid</span></span></li>
+            <li class="build-item"><span class="tile-logos"><img class="tile-logo" src="/assets/images/logos/html5.svg" alt="HTML5" width="56" height="56"></span><span class="build-copy"><strong>Custom websites</strong><span>Coded from scratch to fit the brand</span></span></li>
+            <li class="build-item"><span class="tile-logos"><img class="tile-logo" src="/assets/images/logos/github.svg" alt="GitHub" width="56" height="56"></span><span class="build-copy"><strong>Ongoing support</strong><span>Fixes and features from someone who knows the code</span></span></li>
+          </ul>
+        </article>
+
+        <article class="bento-tile reveal">
+          <p class="bento-eyebrow">Studying</p>
+          <h3 class="bento-title">Computer Science</h3>
+          <p class="bento-text">Second-year Bachelor’s student at the University of Eastern Finland.</p>
+        </article>
+
+        <article class="bento-tile reveal">
+          <p class="bento-eyebrow">Role</p>
+          <h3 class="bento-title">Student Ambassador</h3>
+          <p class="bento-text">Department of Computer Science, Faculty of Natural Sciences, Forestry and Technology, University of Eastern Finland.</p>
+          <a class="link-more bento-link" href="mailto:victor.abuchi@uef.fi">victor.abuchi@uef.fi</a>
+        </article>
+
+        <article class="bento-tile bento-wide reveal">
+          <img class="bento-logo" src="/assets/images/projects/onshipy.png" alt="Onshipy" width="56" height="56">
+          <p class="bento-eyebrow">Building now</p>
+          <h3 class="bento-title">Onshipy &amp; Swifrly</h3>
+          <p class="bento-text">Two SaaS products designed and built from scratch: Onshipy, dropshipping automation for resellers that imports from Nike, ASOS, Amazon and 900+ brands and sells through Shopify, and Swifrly, a financial layer connecting crypto to the real world: trading, payments, and card spending in one app.</p>
+          <p class="bento-links"><a class="link-more" href="https://www.onshipy.com" target="_blank" rel="noopener">Onshipy</a><a class="link-more" href="https://github.com/victorabuchi/Swifrly" target="_blank" rel="noopener">Swifrly</a></p>
+        </article>
+
+        <article class="bento-tile bento-wide reveal">
+          <img class="bento-logo" src="/assets/images/projects/rannikon.png" alt="Rannikon Puutarha" width="56" height="56">
+          <p class="bento-eyebrow">Freelance</p>
+          <h3 class="bento-title">Rannikon Puutarha</h3>
+          <p class="bento-text">A full-stack workforce management platform for a berry farm in Finland: now running for 300+ seasonal workers across 6 house groups in 5 languages.</p>
+          <p class="bento-links"><a class="link-more" href="/case-studies/rannikon/">Read the case study</a></p>
+        </article>
+
+        <article class="bento-tile bento-wide bento-accent reveal">
+          <p class="bento-eyebrow">Let’s talk</p>
+          <h3 class="bento-title">Have something in mind?</h3>
+          <p class="bento-text">Brand partnerships, freelance projects, or just to talk shop.</p>
+          <p class="bento-links"><a class="button button-light" href="/contact/">Get in touch</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section" id="ab-values">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">How I think</p>
+        <h2 class="section-title">What I won’t compromise on.</h2>
+      </div>
+      <div class="values">
+          <article class="value reveal" style="--h: 210">
+            <span class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg></span>
+            <h3 class="value-title">Problems before technology</h3>
+            <p class="value-text">I start with what’s actually broken, then pick the tools. Sometimes I spot the problem first and build the fix before anyone asks.</p>
+          </article>
+          <article class="value reveal" style="--h: 280">
+            <span class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span>
+            <h3 class="value-title">From scratch, on purpose</h3>
+            <p class="value-text">No templates, no shortcuts. Every project is designed and coded to fit the problem, not the other way around.</p>
+          </article>
+          <article class="value reveal" style="--h: 150">
+            <span class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.2 8.3-7 10-3.8-1.7-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <h3 class="value-title">Built to be depended on</h3>
+            <p class="value-text">Real workers, real deadlines, real problems that don’t disappear if the code is sloppy. Software has to work, not just demo well.</p>
+          </article>
+          <article class="value reveal" style="--h: 28">
+            <span class="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg></span>
+            <h3 class="value-title">I stay after launch</h3>
+            <p class="value-text">Fixes, updates, and new features from someone who already knows the codebase.</p>
+          </article>
+      </div>
+    </section>
+
+    <section class="home-section" id="ab-story">
+      <div class="ab-story reveal">
+        <div class="ab-story-text">
+          <p class="section-eyebrow">Featured story</p>
+          <h2 class="section-title">A berry farm, and the software behind its season.</h2>
+          <p class="section-lede">Every season Rannikon Puutarha employs over 300 seasonal workers from Ukraine, Cambodia, Vietnam, Nepal, and beyond, each tracking their hours on paper forms. I built the platform that replaced them: one system, every role, five languages.</p>
+          <p class="ab-story-link"><a class="link-more" href="/case-studies/rannikon/">Read the case study</a></p>
+        </div>
+        <div class="showcase-stage ab-shot">
+          <div class="browser">
+            <div class="browser-bar" aria-hidden="true">
+              <span class="browser-dots"><i></i><i></i><i></i></span>
+              <span class="browser-url">rannikon.com</span>
+            </div>
+            <div class="browser-screens">
+              <figure class="browser-screen is-active">
+                <img src="/assets/images/rannikon/dashboard.png" alt="Rannikon worker dashboard overview" width="2541" height="1223" loading="lazy">
+              </figure>
+            </div>
           </div>
-          <div class="about-row">
-            <span class="section-label">Role</span>
-            <p class="about-text">Student Ambassador, Department of Computer Science, Faculty of Natural Sciences, Forestry and Technology, University of Eastern Finland. <a href="mailto:victor.abuchi@uef.fi">victor.abuchi@uef.fi</a></p>
-          </div>
-          <div class="about-row">
-            <span class="section-label">Building</span>
-            <p class="about-text">Two SaaS products designed and built from scratch: <a href="/projects/#onshipy">Onshipy</a>, dropshipping automation for resellers that imports from Nike, ASOS, Amazon and 900+ brands and sells through Shopify, and <a href="/projects/#swifrly">Swifrly</a>, a financial layer connecting crypto to the real world: trading, payments, and card spending in one app.</p>
-          </div>
-          <div class="about-row">
-            <span class="section-label">Freelance</span>
-            <p class="about-text">Most recently, a full-stack workforce management platform for Rannikon Puutarha, a berry farm in Finland: now running for 300+ seasonal workers across 6 house groups in 5 languages. <a href="/case-studies/rannikon/">Read the case study</a>.</p>
-          </div>
-          <div class="about-row">
-            <span class="section-label">Why</span>
-            <p class="about-text">I like building things people actually depend on: real workers, real deadlines, real problems that don't disappear if the code is sloppy. Software has to work, not just demo well.</p>
-          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section" id="ab-tools">
+      <div class="section-head section-head-row reveal">
+        <div>
+          <p class="section-eyebrow">The toolbox</p>
+          <h2 class="section-title">What I reach for.</h2>
+        </div>
+        <a class="link-more" href="/skills/">Full skills list</a>
+      </div>
+      <div class="toolbox">
+          <article class="tool-card reveal">
+            <h3 class="tool-title">Frontend</h3>
+            <ul class="mini-chips"><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/typescript.svg" alt="" width="16" height="16">TypeScript</li><li class="mini-chip"><span class="mini-logo mini-logo-mono" style="--logo: url(/assets/images/logos/nextjs.svg)" aria-hidden="true"></span>Next.js</li><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/react.svg" alt="" width="16" height="16">React</li><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/html5.svg" alt="" width="16" height="16">HTML / CSS / JS</li><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/tailwindcss.svg" alt="" width="16" height="16">Tailwind CSS</li></ul>
+          </article>
+          <article class="tool-card reveal">
+            <h3 class="tool-title">Backend</h3>
+            <ul class="mini-chips"><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/nodejs.svg" alt="" width="16" height="16">Node.js</li><li class="mini-chip"><span class="mini-logo mini-logo-mono" style="--logo: url(/assets/images/logos/fastify.svg)" aria-hidden="true"></span>Fastify</li><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/postgresql.svg" alt="" width="16" height="16">PostgreSQL</li><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/supabase.svg" alt="" width="16" height="16">Supabase</li><li class="mini-chip">Knex.js</li><li class="mini-chip">Zod</li><li class="mini-chip">JWT / RBAC</li><li class="mini-chip">OAuth2</li></ul>
+          </article>
+          <article class="tool-card reveal">
+            <h3 class="tool-title">Mobile</h3>
+            <ul class="mini-chips"><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/react.svg" alt="" width="16" height="16">React Native</li><li class="mini-chip"><span class="mini-logo mini-logo-mono" style="--logo: url(/assets/images/logos/expo.svg)" aria-hidden="true"></span>Expo</li><li class="mini-chip">Capacitor</li><li class="mini-chip">Flutter</li></ul>
+          </article>
+          <article class="tool-card reveal">
+            <h3 class="tool-title">E-commerce</h3>
+            <ul class="mini-chips"><li class="mini-chip"><img class="mini-logo" src="/assets/images/shopify-logo.png" alt="" width="16" height="16">Shopify Liquid</li><li class="mini-chip"><img class="mini-logo" src="/assets/images/shopify-logo.png" alt="" width="16" height="16">Shopify App Development</li><li class="mini-chip"><img class="mini-logo" src="/assets/images/shopify-logo.png" alt="" width="16" height="16">Shopify Polaris</li></ul>
+          </article>
+          <article class="tool-card reveal">
+            <h3 class="tool-title">Blockchain</h3>
+            <ul class="mini-chips"><li class="mini-chip">Solidity</li><li class="mini-chip">Ethers.js</li></ul>
+          </article>
+          <article class="tool-card reveal">
+            <h3 class="tool-title">Automation</h3>
+            <ul class="mini-chips"><li class="mini-chip">Puppeteer</li><li class="mini-chip">Cheerio (web scraping)</li></ul>
+          </article>
+          <article class="tool-card reveal">
+            <h3 class="tool-title">Infrastructure & DevOps</h3>
+            <ul class="mini-chips"><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/render.svg" alt="" width="16" height="16">Render</li><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/cloudflare.svg" alt="" width="16" height="16">Cloudflare</li><li class="mini-chip">Caddy SSL</li><li class="mini-chip">Namecheap API</li><li class="mini-chip"><span class="mini-logo mini-logo-mono" style="--logo: url(/assets/images/logos/github.svg)" aria-hidden="true"></span>Git / GitHub</li></ul>
+          </article>
+          <article class="tool-card reveal">
+            <h3 class="tool-title">Payments & Services</h3>
+            <ul class="mini-chips"><li class="mini-chip"><img class="mini-logo" src="/assets/images/logos/stripe.svg" alt="" width="16" height="16">Stripe</li><li class="mini-chip">Resend</li><li class="mini-chip">Google APIs</li></ul>
+          </article>
+          <article class="tool-card reveal">
+            <h3 class="tool-title">Other</h3>
+            <ul class="mini-chips"><li class="mini-chip">Java</li><li class="mini-chip">Rust</li></ul>
+          </article>
+      </div>
+    </section>
+
+    <section class="ab-quote" id="ab-quote">
+      <blockquote class="reveal">
+        <p>Software has to work, not just demo well.</p>
+        <cite>Victor Abuchi</cite>
+      </blockquote>
+    </section>
+
+    <section id="cta">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">Let’s build something people depend on.</h2>
+        <p class="cta-text">Brand partnerships, freelance projects, or just to talk shop.</p>
+        <div class="cta-actions">
+          <a class="button button-light" href="mailto:contact@victorabuchi.com">Email me</a>
+          <a class="button button-outline" href="/projects/">See projects</a>
         </div>
       </div>
     </section>
@@ -151,7 +341,7 @@
     </div>
   </footer>
 
-  <script src="/js/i18n.js?v=19"></script>
-  <script src="/js/main.js?v=19"></script>
+  <script src="/js/i18n.js?v=22"></script>
+  <script src="/js/main.js?v=22"></script>
 </body>
 </html>

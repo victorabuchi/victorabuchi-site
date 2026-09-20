@@ -555,6 +555,55 @@ function initShowcase() {
 }
 
 /* -------------------------------------------------------- */
+/* About page                                                  */
+/* -------------------------------------------------------- */
+
+// Statement whose words light up one by one as it scrolls through the viewport.
+function initScrub() {
+  const block = document.querySelector('[data-scrub]');
+  if (!block || REDUCED_MOTION) return;
+
+  const words = Array.from(block.querySelectorAll('.scrub-word'));
+  document.documentElement.classList.add('js-scrub');
+
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const rect = block.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // 0 when the block enters the lower part of the screen, 1 once it reaches the upper third
+    const progress = Math.min(Math.max((vh * 0.85 - rect.top) / (rect.height + vh * 0.3), 0), 1);
+    const lit = Math.round(progress * words.length * 1.08);
+    words.forEach((word, i) => word.classList.toggle('is-lit', i < lit));
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+}
+
+// Logos around the monogram drift slightly with the pointer, at different depths.
+function initOrbit() {
+  const hero = document.querySelector('.ab-hero');
+  const orbit = hero && hero.querySelector('.orbit');
+  if (!orbit || REDUCED_MOTION || !window.matchMedia('(hover: hover)').matches) return;
+
+  hero.addEventListener('pointermove', (event) => {
+    const rect = hero.getBoundingClientRect();
+    orbit.style.setProperty('--px', ((event.clientX - rect.left) / rect.width - 0.5).toFixed(3));
+    orbit.style.setProperty('--py', ((event.clientY - rect.top) / rect.height - 0.5).toFixed(3));
+  });
+  hero.addEventListener('pointerleave', () => {
+    orbit.style.setProperty('--px', 0);
+    orbit.style.setProperty('--py', 0);
+  });
+}
+
+/* -------------------------------------------------------- */
 /* Project folders: open the folder holding a #hash target     */
 /* -------------------------------------------------------- */
 
@@ -582,6 +631,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroGlow();
   initCarousels();
   initShowcase();
+  initScrub();
+  initOrbit();
   initProjectFolders();
   initThemeSwitcher();
   initNavMenu();
