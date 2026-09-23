@@ -430,14 +430,19 @@ function initReveal() {
 // Cycle the words in "I build ..." in the hero, each with its own logo.
 function initRotator() {
   const el = document.querySelector('[data-rotator]');
-  if (!el || REDUCED_MOTION) return;
+  if (!el) return;
 
   let items = [];
   try { items = JSON.parse(el.dataset.items || '[]'); } catch (err) { return; }
-  if (items.length < 2) return;
+  if (!items.length) return;
 
   const img = el.querySelector('.rotator-logo img');
   const word = el.querySelector('.rotator-word');
+  // each word gets one flat, on-brand colour (set here, not baked into the
+  // markup) so the first paint and every later swap always agree
+  if (items[0].color) word.style.color = items[0].color;
+  if (items.length < 2 || REDUCED_MOTION) return;
+
   items.forEach((item) => { new Image().src = item.logo; }); // warm the cache so swaps never flash
 
   let index = 0;
@@ -448,6 +453,7 @@ function initRotator() {
       index = (index + 1) % items.length;
       img.src = items[index].logo;
       word.textContent = items[index].text;
+      if (items[index].color) word.style.color = items[index].color;
       el.classList.remove('is-out');
     }, 300);
   }, 2600);
