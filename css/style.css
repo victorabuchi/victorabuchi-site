@@ -661,8 +661,8 @@ header {
   margin: 0 0 0.5rem;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(3rem, 9vw, 6rem);
-  line-height: 1.0625;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  line-height: 1.05;
   letter-spacing: -0.015em;
   color: var(--color-ink);
   overflow-wrap: anywhere;
@@ -675,10 +675,6 @@ header {
   color: var(--color-link);
 }
 
-/* Finnish headline is one long word: scale it to fit narrow screens */
-html[lang="fi"] .hero-name {
-  font-size: clamp(1.75rem, 8.6vw, 5rem);
-}
 
 .hero-rotator {
   margin: 0 0 1.25rem;
