@@ -62,6 +62,9 @@
       { title: 'Onshipy Shopify App', url: '/projects/#onshipy-shopify-app', kind: 'Project', keywords: 'shopify app embedded polaris app bridge dropshipping' },
       { title: 'Kuopas Mobile', url: '/projects/#kuopas-mobile', kind: 'Project', keywords: 'kuopas mobile expo react native android ios' },
       { title: 'Rannikon Site', url: '/projects/#rannikon-site', kind: 'Project', keywords: 'website wordpress migration next.js farm coming soon' },
+      { title: 'Tekman', url: '/projects/#tekman', kind: 'Project', keywords: 'resident app housing community chat noticeboard booking prisma typescript' },
+      { title: 'Tekman Mobile', url: '/projects/#tekman-mobile', kind: 'Project', keywords: 'tekman mobile expo react native android ios' },
+      { title: 'Swifrly Shopify App', url: '/projects/#swifrly-shopify-app', kind: 'Project', keywords: 'shopify app swifrly crypto checkout coming soon' },
     ],
 
     menu: {
@@ -81,7 +84,7 @@
         label: 'Explore Projects',
         main: [['Onshipy', '/projects/#onshipy'], ['Swifrly', '/projects/#swifrly'], ['Rannikon', '/projects/#rannikon']],
         sideLabel: 'More Projects',
-        side: [['Kuopas', '/projects/#kuopas'], ['Blanc', '/projects/#blanc'], ['Rannikon Mobile', '/projects/#rannikon-mobile']],
+        side: [['Kuopas', '/projects/#kuopas'], ['Tekman', '/projects/#tekman'], ['Blanc', '/projects/#blanc'], ['Rannikon Mobile', '/projects/#rannikon-mobile']],
       },
       '/services/': {
         label: 'Explore Services',
@@ -184,6 +187,9 @@
       { title: 'Onshipy Shopify-sovellus', url: '/projects/#onshipy-shopify-app', kind: 'Projekti', keywords: 'shopify sovellus polaris app bridge dropshipping' },
       { title: 'Kuopas Mobile', url: '/projects/#kuopas-mobile', kind: 'Projekti', keywords: 'kuopas mobiili expo react native android ios' },
       { title: 'Rannikon-sivusto', url: '/projects/#rannikon-site', kind: 'Projekti', keywords: 'verkkosivusto wordpress migraatio next.js marjatila tulossa pian' },
+      { title: 'Tekman', url: '/projects/#tekman', kind: 'Projekti', keywords: 'asukassovellus asuminen yhteisö chat ilmoitustaulu varaukset prisma typescript' },
+      { title: 'Tekman Mobile', url: '/projects/#tekman-mobile', kind: 'Projekti', keywords: 'tekman mobiili expo react native android ios' },
+      { title: 'Swifrly Shopify App', url: '/projects/#swifrly-shopify-app', kind: 'Projekti', keywords: 'shopify sovellus swifrly krypto kassa tulossa pian' },
     ],
 
     menu: {
@@ -203,7 +209,7 @@
         label: 'Tutustu: Projektit',
         main: [['Onshipy', '/projects/#onshipy'], ['Swifrly', '/projects/#swifrly'], ['Rannikon', '/projects/#rannikon']],
         sideLabel: 'Lisää projekteja',
-        side: [['Kuopas', '/projects/#kuopas'], ['Blanc', '/projects/#blanc'], ['Rannikon Mobile', '/projects/#rannikon-mobile']],
+        side: [['Kuopas', '/projects/#kuopas'], ['Tekman', '/projects/#tekman'], ['Blanc', '/projects/#blanc'], ['Rannikon Mobile', '/projects/#rannikon-mobile']],
       },
       '/services/': {
         label: 'Tutustu: Palvelut',
