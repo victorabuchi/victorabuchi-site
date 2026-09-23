@@ -59,6 +59,7 @@
       { title: 'Swifrly', url: '/projects/#swifrly', kind: 'Project', keywords: 'crypto payments finance' },
       { title: 'Kuopas', url: '/projects/#kuopas', kind: 'Project', keywords: 'student housing kuopio chat noticeboard booking mobile expo typescript' },
       { title: 'Blanc', url: '/projects/#blanc', kind: 'Project', keywords: 'shopify theme liquid fashion online store 2.0' },
+      { title: 'Liquid', url: '/projects/#liquid', kind: 'Project', keywords: 'shopify theme dawn liquid glass apple frosted design' },
       { title: 'Onshipy Shopify App', url: '/projects/#onshipy-shopify-app', kind: 'Project', keywords: 'shopify app embedded polaris app bridge dropshipping' },
       { title: 'Kuopas Mobile', url: '/projects/#kuopas-mobile', kind: 'Project', keywords: 'kuopas mobile expo react native android ios' },
       { title: 'Rannikon Site', url: '/projects/#rannikon-site', kind: 'Project', keywords: 'website wordpress migration next.js farm coming soon' },
@@ -84,7 +85,7 @@
         label: 'Explore Projects',
         main: [['Onshipy', '/projects/#onshipy'], ['Swifrly', '/projects/#swifrly'], ['Rannikon', '/projects/#rannikon']],
         sideLabel: 'More Projects',
-        side: [['Kuopas', '/projects/#kuopas'], ['Tekman', '/projects/#tekman'], ['Blanc', '/projects/#blanc'], ['Rannikon Mobile', '/projects/#rannikon-mobile']],
+        side: [['Kuopas', '/projects/#kuopas'], ['Tekman', '/projects/#tekman'], ['Shopify Themes', '/projects/#folder-shopify-themes'], ['Rannikon Mobile', '/projects/#rannikon-mobile']],
       },
       '/services/': {
         label: 'Explore Services',
@@ -184,6 +185,7 @@
       { title: 'Swifrly', url: '/projects/#swifrly', kind: 'Projekti', keywords: 'krypto maksut rahoitus' },
       { title: 'Kuopas', url: '/projects/#kuopas', kind: 'Projekti', keywords: 'opiskelija-asuminen kuopio chat ilmoitustaulu varaukset mobiili expo typescript' },
       { title: 'Blanc', url: '/projects/#blanc', kind: 'Projekti', keywords: 'shopify teema liquid muoti verkkokauppa' },
+      { title: 'Liquid', url: '/projects/#liquid', kind: 'Projekti', keywords: 'shopify teema dawn liquid glass apple huurrelasi design' },
       { title: 'Onshipy Shopify-sovellus', url: '/projects/#onshipy-shopify-app', kind: 'Projekti', keywords: 'shopify sovellus polaris app bridge dropshipping' },
       { title: 'Kuopas Mobile', url: '/projects/#kuopas-mobile', kind: 'Projekti', keywords: 'kuopas mobiili expo react native android ios' },
       { title: 'Rannikon-sivusto', url: '/projects/#rannikon-site', kind: 'Projekti', keywords: 'verkkosivusto wordpress migraatio next.js marjatila tulossa pian' },
@@ -209,7 +211,7 @@
         label: 'Tutustu: Projektit',
         main: [['Onshipy', '/projects/#onshipy'], ['Swifrly', '/projects/#swifrly'], ['Rannikon', '/projects/#rannikon']],
         sideLabel: 'Lisää projekteja',
-        side: [['Kuopas', '/projects/#kuopas'], ['Tekman', '/projects/#tekman'], ['Blanc', '/projects/#blanc'], ['Rannikon Mobile', '/projects/#rannikon-mobile']],
+        side: [['Kuopas', '/projects/#kuopas'], ['Tekman', '/projects/#tekman'], ['Shopify Themes', '/projects/#folder-shopify-themes'], ['Rannikon Mobile', '/projects/#rannikon-mobile']],
       },
       '/services/': {
         label: 'Tutustu: Palvelut',
