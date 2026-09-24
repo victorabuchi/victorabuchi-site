@@ -1,6 +1,12 @@
 #!/bin/bash
-# Regenerates the downloadable résumé PDFs from the live pages' print layout.
+# Regenerates the downloadable PDFs (résumé + case studies) from the live
+# pages' own print layout, so the PDF always matches the page.
 # Run from the site root:   bash make_pdf.sh
+#
+# To add a new case study's PDF, add one more render() line at the bottom:
+#   render "case-studies/<slug>/"    "assets/Victor-Abuchi-<Name>-Case-Study.pdf"    1
+#   render "fi/case-studies/<slug>/" "assets/Victor-Abuchi-<Name>-Case-Study-fi.pdf" 2
+# and add the matching "Download PDF" button + href on that case study page.
 #
 # The street address is NOT in the website. If a local, git-ignored file called
 # .pdf-address exists (line 1 = English address line, line 2 = Finnish), it is
@@ -40,3 +46,6 @@ PY
 
 render "resume/"    "assets/Victor-Abuchi-Resume.pdf"    1
 render "fi/resume/" "assets/Victor-Abuchi-Resume-fi.pdf" 2
+
+render "case-studies/rannikon/"    "assets/Victor-Abuchi-Rannikon-Case-Study.pdf"    1
+render "fi/case-studies/rannikon/" "assets/Victor-Abuchi-Rannikon-Case-Study-fi.pdf" 2
