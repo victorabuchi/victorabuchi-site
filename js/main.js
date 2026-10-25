@@ -545,34 +545,6 @@ function initShowcase() {
 /* About page                                                  */
 /* -------------------------------------------------------- */
 
-// Statement whose words light up one by one as it scrolls through the viewport.
-function initScrub() {
-  const block = document.querySelector('[data-scrub]');
-  if (!block || REDUCED_MOTION) return;
-
-  const words = Array.from(block.querySelectorAll('.scrub-word'));
-  document.documentElement.classList.add('js-scrub');
-
-  let ticking = false;
-  function update() {
-    ticking = false;
-    const rect = block.getBoundingClientRect();
-    const vh = window.innerHeight;
-    // 0 when the block enters the lower part of the screen, 1 once it reaches the upper third
-    const progress = Math.min(Math.max((vh * 0.85 - rect.top) / (rect.height + vh * 0.3), 0), 1);
-    const lit = Math.round(progress * words.length * 1.08);
-    words.forEach((word, i) => word.classList.toggle('is-lit', i < lit));
-  }
-
-  function onScroll() {
-    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  update();
-}
-
 // Logos around the monogram drift slightly with the pointer, at different depths.
 function initOrbit() {
   const hero = document.querySelector('.ab-hero');
@@ -707,7 +679,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroGlow();
   initCarousels();
   initShowcase();
-  initScrub();
   initSkills();
   initResume();
   initOrbit();

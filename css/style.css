@@ -724,7 +724,7 @@ header {
   max-width: 38rem;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.1875rem, 2.2vw, 1.5rem);
+  font-size: 1.0625rem;
   line-height: 1.25;
   letter-spacing: 0.009em;
   color: var(--color-ink-soft);
@@ -879,7 +879,7 @@ header {
 .section-lede {
   margin: 1rem 0 0;
   font-family: var(--font-display);
-  font-size: clamp(1.1875rem, 2vw, 1.5rem);
+  font-size: 1.0625rem;
   line-height: 1.25;
   letter-spacing: 0.009em;
   color: var(--color-ink-soft);
@@ -1480,39 +1480,20 @@ header {
 }
 
 .way-step {
-  position: relative;
   display: flex;
-  gap: 1rem;
-  padding-bottom: 1.35rem;
+  gap: 0.6rem;
+  padding-bottom: 1rem;
 }
 
 .way-step:last-child {
   padding-bottom: 0;
 }
 
-/* the line joining one step to the next */
-.way-step:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  left: 0.9375rem;
-  top: 2.1rem;
-  bottom: 0.15rem;
-  width: 2px;
-  background: var(--color-rule);
-}
-
 .way-num {
-  position: relative;
   flex: none;
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  font-size: 14px;
+  font-size: 1.0625rem;
   font-weight: 600;
-  color: #fff;
-  background: var(--color-blue);
-  border-radius: 50%;
+  color: var(--color-ink-soft);
 }
 
 .way-step-title {
@@ -1565,7 +1546,7 @@ header {
 .cta-title {
   margin: 0 0 1rem;
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 5.4vw, 3.5rem);
+  font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.0834933333;
   letter-spacing: -0.005em;
@@ -1588,15 +1569,6 @@ header {
   justify-content: center;
   gap: 1rem;
   margin-top: 2.25rem;
-}
-
-.button-light {
-  color: #1d1d1f;
-  background: #fff;
-}
-
-.button-light:hover {
-  background: #f5f5f7;
 }
 
 .button-outline {
@@ -1712,7 +1684,7 @@ header {
   margin: 0;
   max-width: 34rem;
   font-family: var(--font-display);
-  font-size: clamp(1.3125rem, 2.5vw, 1.75rem);
+  font-size: 1.0625rem;
   line-height: 1.2;
   letter-spacing: 0.007em;
   color: var(--color-ink-soft);
@@ -1796,22 +1768,11 @@ header {
   max-width: 58rem;
   margin: 0 auto;
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4.4vw, 3.25rem);
+  font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.005em;
   color: var(--color-ink);
-}
-
-.js-scrub .scrub-word {
-  color: var(--color-ink-soft);
-  opacity: 0.32;
-  transition: opacity 0.35s ease, color 0.35s ease;
-}
-
-.js-scrub .scrub-word.is-lit {
-  color: var(--color-ink);
-  opacity: 1;
 }
 
 /* bento grid */
@@ -2101,14 +2062,11 @@ header {
 .ab-quote p {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 6vw, 4.25rem);
+  font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.012em;
-  background: linear-gradient(90deg, #2997ff, #bf5af2 55%, #ff9f0a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-ink);
 }
 
 .ab-quote cite {

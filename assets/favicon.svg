@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Victor Abuchi">
   <style>
-    .tile { fill: #fff; stroke: #e5e5e5; }
-    .mark { stroke: #262626; }
-    .mark-fill { fill: #262626; }
-    @media (prefers-color-scheme: dark) {
-      .tile { fill: #1e1e1e; stroke: #393939; }
-      .mark { stroke: #dedede; }
-      .mark-fill { fill: #dedede; }
+    .tile { fill: #1e1e1e; stroke: #393939; }
+    .mark { stroke: #dedede; }
+    .mark-fill { fill: #dedede; }
+    @media (prefers-color-scheme: light) {
+      .tile { fill: #fff; stroke: #e5e5e5; }
+      .mark { stroke: #262626; }
+      .mark-fill { fill: #262626; }
     }
   </style>
   <rect class="tile" x="1" y="1" width="98" height="98" rx="22" stroke-width="2"/>
