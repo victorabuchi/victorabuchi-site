@@ -676,52 +676,10 @@ header {
 }
 
 
-.hero-rotator {
-  margin: 0 0 1.25rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3.6vw, 2.5rem);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: 0.004em;
-  color: var(--color-ink);
-}
-
-.rotator {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  vertical-align: middle;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.rotator.is-out {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.rotator-logo {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 1.45em;
-  height: 1.45em;
-  margin-block: -0.2em;
-  padding: 0.2em;
-  background: #fff;
-  border-radius: 0.38em;
-  box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.22), 0 4px 14px rgba(0, 0, 0, 0.14);
-}
-
-.rotator-logo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.rotator-word {
-  color: var(--rotator-color, var(--color-link));
-  transition: color 0.3s ease;
+.mini-chips.hero-builds {
+  justify-content: center;
+  max-width: 40rem;
+  margin: 0 auto 1.5rem;
 }
 
 .hero-statement {
@@ -4088,6 +4046,25 @@ span.example-ref {
 
 a.ledger-item:hover {
   text-decoration: none;
+}
+
+.ledger-logo {
+  order: -1;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.4rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.2), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.ledger-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .ledger-index {

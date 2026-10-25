@@ -1,5 +1,1 @@
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0.75" y="2.75" width="22.5" height="18.5" rx="3" fill="#1d1d1f"/>
-  <path d="M5 9.5L9 12L5 14.5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="11.5" y1="14.5" x2="18" y2="14.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24"><title>Terminal</title><g fill="none" stroke="#1d1d1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3.5" width="20" height="17" rx="3.5"/><path d="M7 9.75 10 12l-3 2.25"/><path d="M12.75 15h4.5"/></g></svg>

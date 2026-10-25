@@ -427,38 +427,6 @@ function initReveal() {
   }, 2500);
 }
 
-// Cycle the words in "I build ..." in the hero, each with its own logo.
-function initRotator() {
-  const el = document.querySelector('[data-rotator]');
-  if (!el) return;
-
-  let items = [];
-  try { items = JSON.parse(el.dataset.items || '[]'); } catch (err) { return; }
-  if (!items.length) return;
-
-  const img = el.querySelector('.rotator-logo img');
-  const word = el.querySelector('.rotator-word');
-  // each word gets one flat, on-brand colour (set here, not baked into the
-  // markup) so the first paint and every later swap always agree
-  if (items[0].color) word.style.color = items[0].color;
-  if (items.length < 2 || REDUCED_MOTION) return;
-
-  items.forEach((item) => { new Image().src = item.logo; }); // warm the cache so swaps never flash
-
-  let index = 0;
-  window.setInterval(() => {
-    if (document.hidden) return;
-    el.classList.add('is-out');
-    window.setTimeout(() => {
-      index = (index + 1) % items.length;
-      img.src = items[index].logo;
-      word.textContent = items[index].text;
-      if (items[index].color) word.style.color = items[index].color;
-      el.classList.remove('is-out');
-    }, 300);
-  }, 2600);
-}
-
 // Soft glow that follows the pointer across the hero.
 function initHeroGlow() {
   const hero = document.getElementById('hero');
@@ -736,7 +704,6 @@ function initProjectFolders() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initReveal();
-  initRotator();
   initHeroGlow();
   initCarousels();
   initShowcase();
