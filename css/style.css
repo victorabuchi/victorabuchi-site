@@ -573,7 +573,7 @@ header {
   align-items: center;
   justify-content: center;
   padding: 0 var(--gutter);
-  text-align: center;
+  text-align: left;
 }
 
 #hero::before {
@@ -603,8 +603,48 @@ header {
 }
 
 .hero-inner {
-  max-width: 54rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  width: 100%;
+  max-width: 68rem;
   padding-block: clamp(4rem, 9vw, 6.5rem);
+}
+
+.hero-photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.16), 0 20px 50px rgba(0, 0, 0, 0.16);
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 60rem) {
+  .hero-inner {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .hero-inner .chip-row {
+    grid-column: 1 / -1;
+  }
+}
+
+/* the hero column is left-aligned; .hero-actions is shared with 30-odd other
+   pages, so only override it inside the hero text column */
+.hero-text .hero-actions,
+.hero-text .mini-chips.hero-builds {
+  justify-content: flex-start;
+}
+
+.hero-text .hero-statement,
+.hero-text .mini-chips.hero-builds {
+  margin-inline: 0;
 }
 
 .hero-badge {
@@ -661,7 +701,7 @@ header {
   margin: 0 0 0.5rem;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-size: 1.75rem;
   line-height: 1.05;
   letter-spacing: -0.015em;
   color: var(--color-ink);
@@ -671,9 +711,6 @@ header {
 
 /* one flat accent colour, not a rainbow clip: understated, matches the
    site's own link colour so it reads as "on-brand" rather than decorative */
-.hero-name-accent {
-  color: var(--color-link);
-}
 
 
 .mini-chips.hero-builds {
@@ -745,7 +782,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.6rem;
   margin-top: 3rem;
 }
@@ -832,7 +869,7 @@ header {
 .section-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.0834933333;
   letter-spacing: -0.003em;
@@ -927,7 +964,7 @@ header {
   position: relative;
   margin: 0 0 0.5rem;
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   font-weight: 600;
   line-height: 1.1666666667;
   letter-spacing: 0.009em;
@@ -992,14 +1029,6 @@ header {
   overflow: hidden;
   scroll-snap-align: start;
   transition: transform 0.4s cubic-bezier(0.28, 0.11, 0.32, 1), box-shadow 0.4s ease;
-}
-
-.project-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 4px;
-  background: linear-gradient(90deg, hsl(var(--accent) 85% 60%), hsl(calc(var(--accent) + 50) 85% 60%));
 }
 
 .project-card:hover {
@@ -1072,7 +1101,7 @@ header {
 .project-card-title {
   margin: 0.9rem 0 0.6rem;
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 1.3125rem;
   font-weight: 600;
   line-height: 1.1428571429;
   letter-spacing: 0.007em;
@@ -1418,17 +1447,6 @@ header {
 .way {
   display: flex;
   flex-direction: column;
-  padding: clamp(1.75rem, 3.5vw, 2.5rem);
-  background: var(--color-tile);
-  border-radius: 28px;
-}
-
-.way-featured {
-  background:
-    radial-gradient(70% 55% at 100% 0%, rgba(41, 151, 255, 0.16), transparent 70%),
-    radial-gradient(60% 50% at 0% 100%, rgba(191, 90, 242, 0.14), transparent 70%),
-    var(--color-tile);
-  box-shadow: inset 0 0 0 1px rgba(41, 151, 255, 0.35);
 }
 
 .way-eyebrow {
@@ -1439,14 +1457,10 @@ header {
   color: var(--color-ink-soft);
 }
 
-.way-featured .way-eyebrow {
-  color: var(--color-link);
-}
-
 .way-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.625rem, 3vw, 2rem);
+  font-size: 1.3125rem;
   font-weight: 600;
   line-height: 1.125;
   letter-spacing: -0.003em;
@@ -1683,7 +1697,7 @@ header {
 .ab-title {
   margin: 0 0 1.1rem;
   font-family: var(--font-display);
-  font-size: clamp(3rem, 8.5vw, 5.75rem);
+  font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.0625;
   letter-spacing: -0.015em;
@@ -1691,10 +1705,7 @@ header {
 }
 
 .ab-gradient {
-  background: linear-gradient(90deg, #2997ff, #bf5af2 55%, #ff9f0a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: inherit;
 }
 
 .ab-lede {
@@ -2035,7 +2046,7 @@ header {
 .tool-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.3125rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.19;
   letter-spacing: 0.011em;
@@ -2193,7 +2204,7 @@ header {
 
 .sv-title {
   max-width: 46rem;
-  font-size: clamp(2.25rem, 6vw, 4rem);
+  font-size: 1.75rem;
   line-height: 1.0834933333;
 }
 
@@ -2519,7 +2530,7 @@ span.example-ref {
 .skills-panel-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.003em;
@@ -2594,7 +2605,7 @@ span.example-ref {
 .skill-name {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.1875rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0.011em;
@@ -3188,7 +3199,7 @@ span.example-ref {
 .rs-role {
   margin: 0 0 0.5rem;
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.6vw, 1.875rem);
+  font-size: 1.3125rem;
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: 0.005em;
@@ -3668,7 +3679,7 @@ span.example-ref {
   .case-study-title {
     margin: 0 0 5pt;
     max-width: none;
-    font-size: 20pt;
+    font-size: 1.75rem;
     line-height: 1.15;
   }
 
@@ -4078,7 +4089,7 @@ a.ledger-item:hover {
 .ledger-name {
   order: 1;
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 1.3125rem;
   font-weight: 600;
   line-height: 1.1428571429;
   letter-spacing: 0.007em;
